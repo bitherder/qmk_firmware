@@ -18,7 +18,7 @@
 #include "muse.h"
 extern keymap_config_t keymap_config;
 
-#define CUR_EUR LCA(2)
+#define CUR_EUR A(S(KC_2))
 
 enum planck_layers {
   _QWERTY,
@@ -131,14 +131,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-------+------+------+------+------+------|------+------+------+------+------+-------|
  * |   €   |   6  |   7  |   8  |   9  |   +  |   *  |   2  |   3  |   4  |   5  |   @   |
  * |-------+------+------+------+------+------+------+------+------+------+------+-------|
- * |       |      |      |      |      |    Space    |      |      |      |      |       |
+ * |       |      |      |      | Adj  |    Space    |      |      |      |      |       |
  * `-------------------------------------------------------------------------------------'
  */
 
 [_ARE_HI] = LAYOUT_planck_grid( \
   KC_CIRC, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, KC_HASH,  KC_AMPR, KC_UNDS, KC_LT,   KC_GT,   KC_DLR,  KC_BSPC, \
-  KC_AT,   KC_SCLN, KC_SLSH, KC_MINS, KC_0,    KC_COLN,  KC_BSLS, KC_1,    KC_LPRN, KC_RPRN, KC_EQL,  KC_PIPE, \
-  CUR_EUR, KC_6,    KC_7,    KC_8,    KC_9,    KC_PLUS,  KC_ASTR, KC_2,    KC_3,    KC_4,    KC_5,    _______, \
+  KC_PERC, KC_SCLN, KC_SLSH, KC_MINS, KC_0,    KC_COLN,  KC_BSLS, KC_1,    KC_LPRN, KC_RPRN, KC_EQL,  KC_PIPE, \
+  CUR_EUR, KC_6,    KC_7,    KC_8,    KC_9,    KC_PLUS,  KC_ASTR, KC_2,    KC_3,    KC_4,    KC_5,    KC_AT, \
   _______, _______, _______, _______, MO(_ADJUST), KC_SPC,   KC_SPC,  _______, _______, _______, _______, _______  \
 ),
 
@@ -150,7 +150,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-------+------+------+------+------+------|------+------+------+------+------+-------|
  * |       |      |      |      |      |      | Next | Vol- | Vol+ | Play |      |       |
  * |-------+------+------+------+------+------+------+------+------+------+------+-------|
- * |       |      |      |      |      |             |  End | Home |      |      |       |
+ * |       |      |      |      |      |             | Adj  |      |      |      |       |
  * `-------------------------------------------------------------------------------------'
  */
 [_ARE_LO] = LAYOUT_planck_grid( \
