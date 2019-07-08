@@ -15,10 +15,10 @@
  */
 
 #include QMK_KEYBOARD_H
-/*
 #include "muse.h"
-*/
 extern keymap_config_t keymap_config;
+
+#define CUR_EUR LCA(2)
 
 enum planck_layers {
   _QWERTY,
@@ -96,14 +96,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Mouse | Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Alt  | GUI  | Ctrl | Right |
  * `-------------------------------------------------------------------------------------'
  */
-/*
+
 [_ARENSITO] = LAYOUT_planck_grid( \
   KC_TAB,         KC_Q,    KC_L,    KC_COMM, KC_P,        S(KC_QUOTE), KC_QUOT, KC_F,         KC_U,    KC_D,    KC_K,    KC_BSPC, \
   CTL_T(KC_ESC),  KC_A,    KC_R,    KC_E,    KC_N,        KC_B,        KC_G,    KC_S,         KC_I,    KC_T,    KC_O,    CTL_T(KC_ESC), \
-  MD(_ARE_SHIFT), KC_Z,    KC_W,    KC_DOT,  KC_H,        KC_J,        KC_V,    KC_C,         KC_Y,    KC_M,    KC_X,    KC_ENT, \
-  MO(_MOUSE),     KC_LCTL, KC_LALT, KC_LGUI, MD(_ARE_LO), KC_SPC,      KC_SPC,  MD(_ARE_HI),  KC_RALT, KC_RGUI, KC_RCTL, MO(_MOUSE) \
+  MO(_ARE_SHIFT), KC_Z,    KC_W,    KC_DOT,  KC_H,        KC_J,        KC_V,    KC_C,         KC_Y,    KC_M,    KC_X,    LT(_ARE_SHIFT,KC_ENT), \
+  MO(_MOUSE),     KC_LCTL, KC_LALT, KC_LGUI, MO(_ARE_LO), KC_SPC,      KC_SPC,  MO(_ARE_HI),  KC_RALT, KC_RGUI, KC_RCTL, MO(_MOUSE) \
 ),
-*/
+
 /* Arensito Shift
  * ,-------------------------------------------------------------------------------------.
  * |  BTab |   Q  |   L  |   ?  |   P  |   `  |   ~  |   F  |   U  |   D  |   K  |  Del  |
@@ -115,15 +115,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |       |      |      |      |      |    Space    |      |      |      |      |       |
  * `-------------------------------------------------------------------------------------'
  */
-/*
+
 [_ARE_SHIFT] = LAYOUT_planck_grid( \
-  S(KC_TAB), S(KC_Q), S(KC_L), KC_QUES, S(KC_P), KC_GRV,    KC_TILD, S(KC_F), S(KC_U), S(KC_D,  KC_K,    KC_DEL,  \
-  _______,   S(KC_A), S(KC_R), KC_E,    S(KC_N), S(KC_B),   S(KC_G), S(KC_S), S(KC_I), S(KC_T), S(KC_O), _______, \
+  S(KC_TAB), S(KC_Q), S(KC_L), KC_QUES, S(KC_P), KC_GRV,    KC_TILD, S(KC_F), S(KC_U), S(KC_D),  S(KC_K), KC_DEL,  \
+  _______,   S(KC_A), S(KC_R), S(KC_E), S(KC_N), S(KC_B),   S(KC_G), S(KC_S), S(KC_I), S(KC_T), S(KC_O), _______, \
   _______,   S(KC_Z), S(KC_W), KC_EXLM, S(KC_H), S(KC_J),   S(KC_V), S(KC_C), S(KC_Y), S(KC_M), S(KC_X), _______, \
   _______,   _______, _______, _______, _______,   KC_SPC,  KC_SPC,  _______, _______, _______, _______, _______  \
 ),
-
-*/
 
 /* Arensito Raise
  * ,-------------------------------------------------------------------------------------.
@@ -137,14 +135,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-------------------------------------------------------------------------------------'
  */
 
-/*
 [_ARE_HI] = LAYOUT_planck_grid( \
-  KC_CIRC, KC_LCRB, KC_RCRB, KC_LBRC, KC_RBRC, KC_HASH,  KC_AMPR, KC_UNDS, KC_LT,   KC_GT,   KC_DLR,  KC_BSPC, \
+  KC_CIRC, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, KC_HASH,  KC_AMPR, KC_UNDS, KC_LT,   KC_GT,   KC_DLR,  KC_BSPC, \
   KC_AT,   KC_SCLN, KC_SLSH, KC_MINS, KC_0,    KC_COLN,  KC_BSLS, KC_1,    KC_LPRN, KC_RPRN, KC_EQL,  KC_PIPE, \
   CUR_EUR, KC_6,    KC_7,    KC_8,    KC_9,    KC_PLUS,  KC_ASTR, KC_2,    KC_3,    KC_4,    KC_5,    _______, \
-  _______, _______, _______, _______, _______, KC_SPC,   KC_SPC,  _______, _______, _______, _______, _______  \
+  _______, _______, _______, _______, MO(_ADJUST), KC_SPC,   KC_SPC,  _______, _______, _______, _______, _______  \
 ),
-*/
 
 /* Arensito lower
  * ,-------------------------------------------------------------------------------------.
@@ -157,15 +153,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |       |      |      |      |      |             |  End | Home |      |      |       |
  * `-------------------------------------------------------------------------------------'
  */
-/*
 [_ARE_LO] = LAYOUT_planck_grid( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,    KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, \
   _______, _______, _______, _______, _______, _______,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, \
   _______, _______, _______, _______, _______, _______,  KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY, _______, _______, \
-  _______, _______, _______, _______, _______, KC_SPC,   KC_SPC,  _______, _______, _______, _______, _______  \
+  _______, _______, _______, _______, _______, KC_SPC,   KC_SPC,  MO(_ADJUST), _______, _______, _______, _______  \
 ),
 
-*/
 /* Lower
  * ,-----------------------------------------------------------------------------------.
  * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Bksp |
