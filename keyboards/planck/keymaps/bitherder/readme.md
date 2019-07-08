@@ -1,2 +1,2 @@
-# The Default Planck Layout
+# Bitherder's layout with Arensito keymap 
 
