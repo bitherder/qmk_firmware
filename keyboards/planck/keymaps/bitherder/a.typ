@@ -110,33 +110,6 @@ D:ar at ae ai an as na ia ea ta ra sa rt re ri rn tr er ir nr
  :e, t, a, i, r, s, n, ,e ,t ,a ,i ,r ,s ,n ,e tn ei et nt it
  :ii ai ti ri ei si ni ia it ir ii ie is in ee ,, rr nn tt ,i
 
-a
-
-an as at in is it no on or so
-
-air ant are art ate ear eat eon era err inn ion its net non nor not oar oat one
-ore ran rat rot sat sea see set sin sir sis sit son tan tar tea tee ten tie tin
-toe ton too tot
-
-airs ants area arts earn ears ease east eats eons eras inns into ions iota iris
-iron near neat neon nest nets nine none noon nose note oars oats ones onto rain
-rant rare rate rats rear rein rent rest riot rise roar root rose rota rote sane
-sari sass sear seas seat seen seer sees sens sent sere sets sett sine sins sire
-sirs site sits soar sons soon soot sore sort sots star stir tans tart tear teas
-teen tees tens tent test tier tine tins tint tire toes tone tons toot tore torn
-tors tort toss tote tots tree trio trot
-
-anise aorta areas arena arise arose arson asset astir atone earns eases eaten
-eater enter erase error inane inert inner inset iotas irate irons nests nines
-niter nitro noise noose noses notes oasis oaten onset orate otter rains raise
-rants rares rater rates ratio reins rents resat reset resin rests rinse riots
-risen riser rises roars roast roost roots roses rosin rotas rotor saint satin
-seats seers senor sense siren sires sitar snare sneer snoot snore snort sonar
-sorer sorts stain stair stare stars start state steer stone store taint tarot
-tarts taser taste tater tears tease teens tenor tense tents terse tests tiara
-tiers tines tints tires titan toast toner tones tonne toots torso totes train
-trait trans treat trees trios trite
-
 I:(3) Hang in there; let's do some sentences...
  :To get capitals use your 'O' finger on [right-SHIFT]
 *:_A_R_L6
@@ -156,9 +129,9 @@ D:Nine toes arose in a nose  Tea in a sea  Sirs sneer at tarts
 I:(6)
 *:_A_R_L9
 D:Astir Sis sits on roses  Sons roast oats  Tires rotate on iron
- :Tan Ned tints assets  Saints treat sinners to atone
+ :Tan Ren tints assets  Saints treat sinners to atone
  :Rita teases Ron  Ants eat trees  Teens orate in an oasis
- :Ears sense tone  Sis sits on seats  The state arose too soon
+ :Ears sense tone  Sis sits on seats  A state arose too soon
 
 I:(7)
 *:_A_R_L10
@@ -172,7 +145,7 @@ I:(8)
 *:_A_R_L11
 D:Sid adds all sail as Dad sees a safe sea as idle as a lake
 
-G:_A_E_Q1
+G:_A_E_A1
 
 #------------------------------------------------------------------------------
 # Lesson Q2
@@ -494,10 +467,10 @@ G:_A_MENU
 *:_A_MENU
 B:                      Quick QWERTY course
 M: UP=_EXIT "The Q series contains the following 5 lessons"
- :_A_S_Q1 "Lesson Q1     a s d f j k l ; e i"
- :_A_S_Q2 "Lesson Q2     h g o u n . t"
- :_A_S_Q3 "Lesson Q3     y r c , ? : p"
- :_A_S_Q4 "Lesson Q4     m w v z x b q"
- :_A_S_Q5 "Lesson Q5     ' -"
+ :_A_S_A1 "Lesson A1     A r e n s i t o , u"
+ :_A_S_A2 "Lesson A2     h g o u n . t"
+ :_A_S_A3 "Lesson A3     y r c , ? : p"
+ :_A_S_A4 "Lesson A4     m w v z x b q"
+ :_A_S_A5 "Lesson A5     ' -"
 *:_A_EXIT
 #------------------------------------------------------------------------------
