@@ -16,25 +16,25 @@
 #
 
 #------------------------------------------------------------------------------
-# Series Q
+# Series A
 #------------------------------------------------------------------------------
-G:_Q_MENU
-*:_Q_NO_MENU
+G:_A_MENU
+*:_A_NO_MENU
 
 #------------------------------------------------------------------------------
-# Lesson Q1
+# Lesson A1
 #------------------------------------------------------------------------------
-*:Q1
-*:_Q_S_Q1
-B:                             Lesson Q1
+*:A1
+*:_A_S_A1
+B:                             Lesson A1
 
 *:_Q_R_L0
-T:			Welcome to lesson Q1.
+T:			Welcome to lesson A1.
  :
- :In the Q series of lessons, we will be learning to touch-type on the standard
- :keyboard.  I will introduce you to each letter on the keyboard, one at a time.
- :By the time you have completed this series, you will be able to type the entire
- :alphabet, the numbers, and most of the punctuation keys by touch.
+ :In the A series of lessons, we will be learning to touch-type on the Arensito
+ :keyboard layout.  I will introduce you to each letter on the keyboard, one at a
+ :time.  By the time you have completed this series, you will be able to type the
+ :entire alphabet, the numbers, and most of the punctuation keys by touch.
  :
  :If you have never taken any lessons in typing before, please be patient.  Typing
  :is not difficult but it does take a lot of practice.  Avoid the tendency to
@@ -50,7 +50,7 @@ T:			Welcome to lesson Q1.
  :If you can already touch type, you should be able to go through these lessons
  :fairly quickly.  Or, you may want to go directly to the S series.
 
-*:_Q_R_L1
+*:_A_R_L1
 T:
  :			The HOME Keys.
  :
@@ -58,22 +58,22 @@ T:
  :fingers are.  The way to do this is to have a special place for each finger.
  :This key is called the HOME position.
  :
- :Place the first finger of your right hand on the J-key.  Now, place your second
- :finger on the K-key, your third finger on the L-key, and your fourth-finger on
- :the ;-key (the one with the : and ; on it).
+ :Place the first finger of your right hand on the S-key.  Now, place your second
+ :finger on the I-key, your third finger on the T-key, and your fourth-finger on
+ :the P-key.
  :
- :Similarly place the four fingers of your left hand on the F, D, S, and A-keys.
+ :Similarly place the four fingers of your left hand on the N, E, R, and A-keys.
  :Place your right thumb over the SPACE bar.  (Henceforth, always hit the SPACE
  :bar with this thumb.)  Now, lift all your fingers slightly so that they are
  :poised just over the keys.  Each finger should be just barely touching its home
  :key.  This is an electronic keyboard and does not take much pressure to ac-
  :cidentally press the key down.
  :
- :Above the D-key is the E-key.  Above the K-key is the I-key.  Learn these
+ :Above the E-key is the ,-key.  Above the I-key is the U-key.  Learn these
  :positions well.  Whenever you are about to type a line, look at your fingers and
  :make sure they are in the HOME position.  Then don't look at them again.
 
-*:_Q_R_L2
+*:_A_R_L2
 T:
  :			DRILL PATTERNS
  :
@@ -97,18 +97,18 @@ T:
  :you try again, etc.  Don't forget to use your right thumb for the SPACE bar.
 
 I:(1) Try this:
-*:_Q_R_L3
-D:asdf ;lkj asdf ;lkj asdf ;lkj asdf ;lkj asdf ;lkj asdf ;lkj
+*:_A_R_L3
+D:aren otis aren otis aren otis aren otis aren otis aren otis
 
-I:Now this (use 'k' finger for 'i' and 'd' finger for 'e'):
-*:_Q_R_L4
-D:asdef ;lkij asdef ;lkij asdef ;lkij asdef ;lkij asdef ;lkij
+I:Now this (use 'i' finger for 'u' and 'e' finger for ','):
+*:_A_R_L4
+D:are,n otius are,n otius are,n otius are,n otius are,n otius
 
 I:(2) Some more:
-*:_Q_R_L5
-D:as al ad ak af aj fa ka da la sa ja sl sd sk sf ls ds ks fs
- :de le ae ke se je fe ed el ea ek es ej ef ed lf dk dl fl kl
- :ki ai li si di ji fi ia il is ik id ij if dd ee ss ff ll ei
+*:_A_R_L5
+d:ar at ae ai an as na ia ea ta ra sa rt re ri rn tr er ir nr
+ :e, t, a, i, r, s, n, ,e ,t ,a ,i ,r ,s ,n ,e tn ei et nt it
+ :ii ai ti ri ei si ni ia it ir ii ie is in ee ,, rr nn tt ,i
 
 I:(3) Hang in there; let's do some sentences...
  :To get capitals use your ';' finger on [right-SHIFT]
@@ -443,19 +443,19 @@ G:_Q_E_Q5
 # Lesson series Q jump tables
 #------------------------------------------------------------------------------
 *:_Q_E_Q1
-Q: Do you want to continue to lesson Q2 [Y/N] ? 
+Q: Do you want to continue to lesson Q2 [Y/N] ?
 N:_Q_MENU
 G:_Q_S_Q2
 *:_Q_E_Q2
-Q: Do you want to continue to lesson Q3 [Y/N] ? 
+Q: Do you want to continue to lesson Q3 [Y/N] ?
 N:_Q_MENU
 G:_Q_S_Q3
 *:_Q_E_Q3
-Q: Do you want to continue to lesson Q4 [Y/N] ? 
+Q: Do you want to continue to lesson Q4 [Y/N] ?
 N:_Q_MENU
 G:_Q_S_Q4
 *:_Q_E_Q4
-Q: Do you want to continue to lesson Q5 [Y/N] ? 
+Q: Do you want to continue to lesson Q5 [Y/N] ?
 N:_Q_MENU
 G:_Q_S_Q5
 *:_Q_E_Q5
