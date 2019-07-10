@@ -131,20 +131,19 @@ I:(6)
 D:Astir Sis sits on roses  Sons roast oats  Tires rotate on iron
  :Tan Ren tints assets  Saints treat sinners to atone
  :Rita teases Ron  Ants eat trees  Teens orate in an oasis
- :Ears sense tone  Sis sits on seats  A state arose too soon
+ :Ears sense tone  Sis sits on a seat  A state arose too soon
 
 I:(7)
 *:_A_R_L10
-D:Sails fill as Sis sails a safe lake  Skill aids Sis  Dad
- :likes a safe sail  Sis seeks a lee isle  All sail is
- :laid aside  Sis feels life is ideal  Idle fields lead as
- :Sis seeks lilies  Sis falls  Lilies fade as Sis falls
- :Faded sails fill  Idle isles slide aside as Sis sails
+D:An area near tents is neat  Sisters in saris sit on seats
+ :A tone torso earns treats  Rat sits in its nest  Inns rise on stones
+ :Otters see ants  Notes on resin are trite  One error, ten errors
+ :Trains sit on iron  Sons sent satin seats  In tins art sits
+ :No sass, no art  Tears rain on roses  Arise sir Tores
 
 I:(8)
 *:_A_R_L11
-D:Sid adds all sail as Dad sees a safe sea as idle as a lake
-
+D:Rita ate roses on a satin seat, not too near ten tenors toots
 G:_A_E_A1
 
 #------------------------------------------------------------------------------
