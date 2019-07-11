@@ -100,15 +100,22 @@ I:(1) Try this:
 *:_A_R_L3
 D:aren otis aren otis aren otis aren otis aren otis aren otis
 
+I: Some more:
+*:_A_R_L3bis
+D:rt is si er ir ei re et ae tn ts ao sn te os ai sa sr as it
+  ie ne ia nt ni ta rn ri ar ot or io ns on ti nr tr so en ro
+  at st no eo an oi se es oe na to oa ea in rs ra
+
+
 I:Now this (use 'i' finger for 'u' and 'e' finger for ','):
 *:_A_R_L4
 D:are,n otius are,n otius are,n otius are,n otius are,n otius
 
 I:(2) Some more:
 *:_A_R_L5
-D:ar at ae ai an as na ia ea ta ra sa rt re ri rn tr er ir nr
- :e, t, a, i, r, s, n, ,e ,t ,a ,i ,r ,s ,n ,e tn ei et nt it
- :ii ai ti ri ei si ni ia it ir ii ie is in ee ,, rr nn tt ,i
+D:,a r, er o, ei at ue as na ,s ot a, u, us ut oe i, ao no au
+ :,i is sr ia ai to on oi os it ae n, se ,n ou tu te io tn un
+ :oa ea ie tr e, uo ra st su ,e ur ni et an sn ,o ,u nu si eu
 
 I:(3) Hang in there; let's do some sentences...
  :To get capitals use your 'O' finger on [right-SHIFT]
@@ -122,14 +129,14 @@ D:Insert stones into a tote  Tenors eat oats  Soar in air
 
 I:(5)
 *:_A_R_L8
-D:Nine toes arose in a nose  Tea in a sea  Sirs sneer at tarts
- :An otter eats toast  Roses atone sins  Noon rises in riots
+D:Nine toes arose in a nose  Tea in a sea  Sirs sneer at tunes
+ :An otter eats tuna  Roses atone sins  Noon rises in riots
  :Eons erases error  Senior eaters soon sit  Stars rise in seas
 
 I:(6)
 *:_A_R_L9
-D:Astir Sis sits on roses  Sons roast oats  Tires rotate on iron
- :Tan Ren tints assets  Saints treat sinners to atone
+D:Astir Sis sits on roses  Sons roast oats  Tires sit on autos
+ :Tan Ren ruins assets  Saints treat sinners to atone
  :Rita teases Ron  Ants eat trees  Teens orate in an oasis
  :Ears sense tone  Sis sits on a seat  A state arose too soon
 
@@ -137,33 +144,31 @@ I:(7)
 *:_A_R_L10
 D:An area near tents is neat  Sisters in saris sit on seats
  :A tone torso earns treats  Rat sits in its nest  Inns rise on stones
- :Otters see ants  Notes on resin are trite  One error, ten errors
- :Trains sit on iron  Sons sent satin seats  In tins art sits
+ :Our aunt uses nouns  Notes on resin are trite  One error, ten errors
+ :Trains sit on iron  Sons sent satin seats  Urns ruin eons
  :No sass, no art  Tears rain on roses  Arise sir Tores
 
 I:(8)
 *:_A_R_L11
-D:Rita ate roses on a satin seat, not too near ten tenors toots
+D:Rita ate roses in a satin tutu, not too near ten tenors tune
 G:_A_E_A1
 
 #------------------------------------------------------------------------------
 # Lesson Q2
 #------------------------------------------------------------------------------
 *:Q2
-*:_A_S_Q2
-B:                             Lesson Q2
+*:_A_S_A2
+B:                             Lesson A2
 
 *:_A_R_L12
 T:
- :			  (h g o u n . t)
+ :			  (g b d f v m ')
  :
- :In this lesson you learn six new letters (H, G, O, U, N, T) and the period. (.).
- :Be sure that the F-finger does not linger on the G-key  or the J-finger on the
- :H-key.  Also be sure to use your fingers as follows:
+ :In this lesson you learn six new letters (G, B, D, F, V, M) and the single
+ :quote. (').  Be sure that the N-finger does not linger on the G-key or the
+ :S-finger on the G-key.  Also be sure to use your fingers as follows:
  :
- : 'f' for 't' and 'g', 'j' for 'h', 'u' and 'n', finally use 'l' for 'o' and '.'
- :
- :Note that you always follow a period with two spaces.
+ : 'n' for (') and 'b', 's' for 'g', 'f' and 'v', finally use 't' for 'd' and 'm'
 
 I:(1) Rhythm Drill
 *:_A_R_L13
