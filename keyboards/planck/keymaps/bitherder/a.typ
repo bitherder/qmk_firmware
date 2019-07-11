@@ -172,15 +172,16 @@ T:
 
 I:(1) Rhythm Drill
 *:_A_R_L13
-D:a;sldkfjgh a;sldkfjgh a;sldkfjgh a;sldkfjgh a;sldkfjgh
- :asdefghk lokijujhjn asdefghk lokijujhjn asdefghk
- :l.  a.  l.  s.  l.  d.  l.  e.  l.  n.  l.  t.  l.  o.
+D:aorteinsbg aorteinsbg aorteinsbg aorteinsbg aorteinsbg
+ :areenbgi toiusfsgsv areenbgi toiusfsgsv areenbgi
 
 I:(2) Balanced Keyboard Drill
 *:_A_R_L14
-D:as os es us is an on en un in at ot et ut it ad od ed ud id
- :sa so se su si na no ne nu ni ta to te tu ti ha ho he hu hi
- :da do de du di au st oi sh oi ts ht oe nk ou nd ue ns ui th
+D:ar dr ,r fr ur av dv ,v fv uv a' d' ,' f' u' ae de ,e fe ue
+ :ra rd r, rf ru va vd v, vf vu 'a 'd ', 'f 'u ga gd g, gf gu
+ :ea ed e, ef eu af r' du rg du 'r g' d, v<18> df ve f, vr fu 'g
+
+ :tm am tm rm tm em tm em tm vm tm 'm tm om
 
 I:(3) Continuous Copy
 *:_A_R_L15
