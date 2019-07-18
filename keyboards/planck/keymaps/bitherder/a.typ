@@ -179,7 +179,7 @@ I:(2) Balanced Keyboard Drill
 *:_A_R_L14
 D:ar dr ,r fr ur av dv ,v fv uv a' d' ,' f' u' ae de ,e fe ue
  :ra rd r, rf ru va vd v, vf vu 'a 'd ', 'f 'u ga gd g, gf gu
- :ea ed e, ef eu af r' du rg du 'r g' d, v<18> df ve f, vr fu 'g
+ :ea ed e, ef eu af r' du rg du 'r g' d, vi df ve f, vr fu 'g
 
  :tm am tm rm tm em tm em tm vm tm 'm tm om
 
@@ -217,10 +217,10 @@ I:(8) Rhythmic Review
 *:_A_R_L20
 D:He sees that in a test he has to state and use a sane idea.
 
-G:_A_E_Q2
+G:_A_E_A2
 
 #------------------------------------------------------------------------------
-# Lesson Q3
+# Lesson A3
 #------------------------------------------------------------------------------
 *:Q3
 *:_A_S_Q3
