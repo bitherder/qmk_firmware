@@ -5,3 +5,4 @@ endif
 MOUSEKEY_ENABLE = yes
 RGBLIGHT_ENABLE = no
 BACKLIGHT_ENABLE = no
+BOOTLOADER = atmel-dfu
