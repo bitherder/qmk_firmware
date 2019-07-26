@@ -11,7 +11,6 @@ extern keymap_config_t keymap_config;
 // entirely and just use numbers.
 enum custom_layers {
   _QWERTY,
-  _COLEMAK,
   _ARENSITO,
   _ARE_SHIFT,
   _ARE_LO,
@@ -24,7 +23,6 @@ enum custom_layers {
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
-  COLEMAK,
   ARENSITO,
   ARE_SHIFT,
   ARE_LO,
@@ -65,24 +63,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Shift |   Z  |   X  |   C  |   V  |   B  ||   K  |   M  |   ,  |   .  |   /  |Ent/Sht|
  * |-------+------+------+------+------+------||------+------+------+------+------+-------|
  * | Mouse | Ctrl | Alt  | GUI  |Lower | Spc  || Spc  |Raise | Left | Down |  Up  | Right |
- * `------------------------------------------''------------------------------------------'
- */
-[_COLEMAK] = LAYOUT_ortho_4x12( \
-  KC_TAB,     KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC, \
-  KC_ESC,     KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT, \
-  KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, MT(MOD_RSFT, KC_ENT), \
-  MO(_MOUSE), KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_LCTL, RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
-),
-
-/* Arensito Base
- * ,------------------------------------------..------------------------------------------.
- * |  Tab  |   q  |   l  |   ,  |   p  |   '  ||   "  |   f  |   u  |   d  |   k  | Bksp  |
- * |-------+------+------+------+------+------||------+------+------+------+------+-------|
- * |Esc/Ctl|   a  |   r  |   e  |   n  |   b  ||   g  |   s  |   i  |   t  |   o  |Esc/Ctl|
- * |-------+------+------+------+------+------||------+------+------+------+------+-------|
- * | Shift |   z  |   w  |   .  |   h  |   j  ||   v  |   c  |   y  |   m  |   x  |Ent/Sht|
- * |-------+------+------+------+------+------||------+------+------+------+------+-------|
- * | Mouse | Ctrl | Alt  | GUI  |Lower | Spc  || Spc  |Raise | Alt  | GUI  | Ctrl | Mouse |
  * `------------------------------------------''------------------------------------------'
  */
 
@@ -198,10 +178,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------''-----------------------------------------'
  */
 [_ADJUST] = LAYOUT_ortho_4x12( \
-  _______, RESET,   DEBUG,   _______, _______, _______,  _______, TERM_ON, TERM_OFF, _______,  _______, KC_DEL,  \
-  _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM,  AG_SWAP, QWERTY,  COLEMAK,  ARENSITO, _______, _______, \
-  _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,    MI_OFF,  _______, _______,  _______,  _______, _______, \
-  _______, _______, _______, _______, _______, _______,  _______, _______, _______,  _______,  _______, _______  \
+  _______, RESET,   DEBUG,   _______, _______, _______,  _______, TERM_ON, TERM_OFF, _______, _______, KC_DEL,  \
+  _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM,  AG_SWAP, QWERTY,  ARENSITO, _______, _______, _______, \
+  _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,    MI_OFF,  _______, _______,  _______, _______, _______, \
+  _______, _______, _______, _______, _______, _______,  _______, _______, _______,  _______, _______, _______  \
 ),
 
 /* Mouse
@@ -229,12 +209,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case QWERTY:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_QWERTY);
-      }
-      return false;
-      break;
-    case COLEMAK:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_COLEMAK);
       }
       return false;
       break;
