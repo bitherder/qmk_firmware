@@ -54,15 +54,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   MO(_MOUSE), KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_LCTL, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
 ),
 
-/* Colemak
+/* Arensito Base
  * ,------------------------------------------..------------------------------------------.
- * |  Tab  |   Q  |   W  |   F  |   P  |   G  ||   J  |   L  |   U  |   Y  |   ;  | Bksp  |
+ * |  Tab  |   q  |   l  |   ,  |   p  |   '  ||   "  |   f  |   u  |   d  |   k  | Bksp  |
  * |-------+------+------+------+------+------||------+------+------+------+------+-------|
- * |Esc/Ctl|   A  |   R  |   S  |   T  |   D  ||   H  |   N  |   E  |   I  |   O  |   /   |
+ * |Esc/Ctl|   a  |   r  |   e  |   n  |   b  ||   g  |   s  |   i  |   t  |   o  |Esc/Ctl|
  * |-------+------+------+------+------+------||------+------+------+------+------+-------|
- * | Shift |   Z  |   X  |   C  |   V  |   B  ||   K  |   M  |   ,  |   .  |   /  |Ent/Sht|
+ * | Shift |   z  |   w  |   .  |   h  |   j  ||   v  |   c  |   y  |   m  |   x  |Ent/Sht|
  * |-------+------+------+------+------+------||------+------+------+------+------+-------|
- * | Mouse | Ctrl | Alt  | GUI  |Lower | Spc  || Spc  |Raise | Left | Down |  Up  | Right |
+ * | Mouse | Ctrl | Alt  | GUI  |Lower | Spc  || Spc  |Raise | Alt  | GUI  | Ctrl | Mouse |
  * `------------------------------------------''------------------------------------------'
  */
 
