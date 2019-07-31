@@ -103,8 +103,8 @@ D:aren otis aren otis aren otis aren otis aren otis aren otis
 I: Some more:
 *:_A_R_L3bis
 D:rt is si er ir ei re et ae tn ts ao sn te os ai sa sr as it
-  ie ne ia nt ni ta rn ri ar ot or io ns on ti nr tr so en ro
-  at st no eo an oi se es oe na to oa ea in rs ra
+ :ie ne ia nt ni ta rn ri ar ot or io ns on ti nr tr so en ro
+ :at st no eo an oi se es oe na to oa ea in rs ra
 
 
 I:Now this (use 'i' finger for 'u' and 'e' finger for ','):
