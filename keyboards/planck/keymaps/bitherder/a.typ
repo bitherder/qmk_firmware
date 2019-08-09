@@ -32,15 +32,15 @@ B:                             Lesson A1
 T:			Welcome to lesson A1.
  :
  :In the A series of lessons, we will be learning to touch-type on the Arensito
- :keyboard layout.  I will introduce you to each letter on the keyboard, one at a
- :time.  By the time you have completed this series, you will be able to type the
- :entire alphabet, the numbers, and most of the punctuation keys by touch.
+ :keyboard layout.  I will introduce you to each letter on the keyboard, one at
+ :a time.  By the time you have completed this series, you will be able to type
+ :the entire alphabet, the numbers, and most of the punctuation keys by touch.
  :
- :If you have never taken any lessons in typing before, please be patient.  Typing
- :is not difficult but it does take a lot of practice.  Avoid the tendency to
- :look down at your fingers while typing.  This is a very bad habit and is hard
- :to break later.  If you hit the wrong key, I will let you know.  (But, I won't
- :tell anyone else, so don't worry about it.)
+ :If you have never taken any lessons in typing before, please be patient.
+ :Typing is not difficult but it does take a lot of practice.  Avoid the
+ :tendency to look down at your fingers while typing.  This is a very bad habit
+ :and is hard to break later.  If you hit the wrong key, I will let you know.
+ :(But, I won't tell anyone else, so don't worry about it.)
  :
  :If you have always used the hunt-and-peck method, you will have an even harder
  :time keeping yourself from looking.  Don't be surprised if you find touch
@@ -54,24 +54,24 @@ T:			Welcome to lesson A1.
 T:
  :			The HOME Keys.
  :
- :In order to hit the correct keys by touch alone, you must always know where your
- :fingers are.  The way to do this is to have a special place for each finger.
- :This key is called the HOME position.
+ :In order to hit the correct keys by touch alone, you must always know where
+ :your fingers are.  The way to do this is to have a special place for each
+ :finger.  This key is called the HOME position.
  :
- :Place the first finger of your right hand on the S-key.  Now, place your second
- :finger on the I-key, your third finger on the T-key, and your fourth-finger on
- :the P-key.
+ :Place the first finger of your right hand on the S-key.  Now, place your
+ :second finger on the I-key, your third finger on the T-key, and your
+ :fourth-finger on the P-key.
  :
  :Similarly place the four fingers of your left hand on the N, E, R, and A-keys.
  :Place your right thumb over the SPACE bar.  (Henceforth, always hit the SPACE
  :bar with this thumb.)  Now, lift all your fingers slightly so that they are
- :poised just over the keys.  Each finger should be just barely touching its home
- :key.  This is an electronic keyboard and does not take much pressure to ac-
- :cidentally press the key down.
+ :poised just over the keys.  Each finger should be just barely touching its
+ :home key.  This is an electronic keyboard and does not take much pressure to
+ :accidentally press the key down.
  :
  :Above the E-key is the ,-key.  Above the I-key is the U-key.  Learn these
- :positions well.  Whenever you are about to type a line, look at your fingers and
- :make sure they are in the HOME position.  Then don't look at them again.
+ :positions well.  Whenever you are about to type a line, look at your fingers
+ :and make sure they are in the HOME position.  Then don't look at them again.
 
 *:_A_R_L2
 T:
