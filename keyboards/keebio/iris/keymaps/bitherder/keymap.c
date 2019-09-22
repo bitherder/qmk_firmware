@@ -4,6 +4,8 @@ extern keymap_config_t keymap_config;
 
 enum custom_layers {
   _QWERTY,
+  _ARENSITO,
+  _ARE_SHIFT,
   _LOWER,
   _RAISE,
   _ADJUST,
@@ -28,9 +30,52 @@ enum custom_layers {
 #define KC_SNUBS S(KC_NUBS)
 #define KC_S_ENT MT(MOD_RSFT, KC_ENT)
 #define KC_D_MO  LT(_MOUSE, KC_D)
+#define KC_E_MO  LT(_MOUSE, KC_E)
+#define KC_S_F1 S(KC_F1)
+#define KC_S_F2 S(KC_F2)
+#define KC_S_F3 S(KC_F3)
+#define KC_S_F4 S(KC_F4)
+#define KC_S_F5 S(KC_F5)
+#define KC_S_F6 S(KC_F6)
+#define KC_S_F7 S(KC_F7)
+#define KC_S_F8 S(KC_F8)
+#define KC_S_F9 S(KC_F9)
+#define KC_S_F10 S(KC_F10)
+#define KC_S_F11 S(KC_F11)
+#define KC_S_F12 S(KC_F12)
+#define KC_BTAB S(KC_TAB)
+#define KC_S_Q S(KC_Q)
+#define KC_S_L S(KC_L)
+#define KC_S_P S(KC_P)
+#define KC_S_F S(KC_F)
+#define KC_S_U S(KC_U)
+#define KC_S_D S(KC_D)
+#define KC_S_K S(KC_K)
+#define KC_S_A S(KC_A)
+#define KC_S_R S(KC_R)
+#define KC_S_E S(KC_E)
+#define KC_S_N S(KC_N)
+#define KC_S_B S(KC_B)
+#define KC_S_G S(KC_G)
+#define KC_S_S S(KC_S)
+#define KC_S_I S(KC_I)
+#define KC_S_T S(KC_T)
+#define KC_S_O S(KC_O)
+#define KC_S_Z S(KC_Z)
+#define KC_S_X S(KC_X)
+#define KC_S_H S(KC_H)
+#define KC_S_J S(KC_J)
+#define KC_S_V S(KC_V)
+#define KC_S_C S(KC_C)
+#define KC_S_Y S(KC_Y)
+#define KC_S_M S(KC_M)
+#define KC_S_X S(KC_X)
+
+#define KC_SARE MO(_ARE_SHIFT)
 
 enum custom_keycodes {
   KC_QWERTY = SAFE_RANGE,
+  KC_ARENSITO,
   KC_LOWER,
   KC_RAISE,
   KC_ADJUST,
@@ -49,6 +94,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      LSFT, Z,    X,    C,    V,    B,    LOWER,         RAISE,N,    M,    COMM, DOT,  SLSH, S_ENT,
   //└─────┴─────┴─────┼─────┴┬────┴─┬───┴──┬──┘        └──┬──┴───┬─┴────┬┴─────┼─────┴─────┴────────┘
                        LSFT,  LGUI,  CESC,                 SPC,   LALT,  BSPC
+                   // └──────┴──────┴──────┘              └──────┴──────┴──────┘
+  ),
+
+  [_ARENSITO] = LAYOUT_kc(
+  //┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬────────┐
+     F1,   F2,   F3,   F4,   F5,   F6,                        F7,   F8,   F9,   F10,  F11,  F12,
+  //├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼────────┤
+     TAB,  Q,    L,    COMM, P,    AT,                        PIPE, F,    U,    D,    K,    BSPC,
+  //├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼────────┤
+     QUOT, A,    R,    E_MO, N,    B,                         G,    S,    I,    T,    O,    DQT,
+  //├─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼────────┤
+     LSFT, Z,    X,    DOT,  H,    J,    LOWER,         RAISE,V,    C,    Y,    M,    X,    S_ENT,
+  //└─────┴─────┴─────┼─────┴┬────┴─┬───┴──┬──┘        └──┬──┴───┬─┴────┬┴─────┼─────┴─────┴────────┘
+                       LSFT,  LGUI,  CESC,                 SPC,   LALT,  BSPC
+                   // └──────┴──────┴──────┘              └──────┴──────┴──────┘
+  ),
+
+  [_ARE_SHIFT] = LAYOUT_kc(
+  //┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬────────┐
+     S_F1, S_F2, S_F3, S_F4, S_F5, S_F6,                      S_F7, S_F8, S_F9, S_F10,S_F11,S_F12,
+  //├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼────────┤
+     BTAB, S_Q,  S_L,  QUES, S_P,  HASH,                      AMPR, S_F,  S_U,  S_D,  S_K,  DEL,
+  //├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼────────┤
+     GRV,  S_A,  S_R,  S_E,  S_N,  S_B,                       S_G,  S_S,  S_I,  S_T,  S_O,  TILD,
+  //├─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼────────┤
+     ____, S_Z,  S_X,  EXLM, S_H,  S_J,  ____,          ____, S_V,  S_C,  S_Y,  S_M,  S_X,  ____,
+  //└─────┴─────┴─────┼─────┴┬────┴─┬───┴──┬──┘        └──┬──┴───┬─┴────┬┴─────┼─────┴─────┴────────┘
+                       ____,  ____,  ____,                 ____,   ____,  ____
                    // └──────┴──────┴──────┘              └──────┴──────┴──────┘
   ),
 
@@ -97,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      _______, RESET,   DEBUG,   _______, _______, _______,                            _______, TERM_ON, TERM_OFF,_______, _______, KC_DEL,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM,                            AG_SWAP, KC_QWERTY,BL_STEP,_______, _______, _______,
+     _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM,                            AG_SWAP, KC_QWERTY,KC_ARENSITO,_______, _______, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,                              MI_OFF,  _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
@@ -113,6 +186,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_QWERTY:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_QWERTY);
+      }
+      return false;
+      break;
+    case KC_ARENSITO:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_ARENSITO);
       }
       return false;
       break;
