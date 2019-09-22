@@ -27,7 +27,7 @@ enum custom_layers {
 #define KC_SNUHS S(KC_NUHS)
 #define KC_SNUBS S(KC_NUBS)
 #define KC_S_ENT MT(MOD_RSFT, KC_ENT)
-#define KC_D_MO  LT(_MOUSE, KC_F)
+#define KC_D_MO  LT(_MOUSE, KC_D)
 
 enum custom_keycodes {
   KC_QWERTY = SAFE_RANGE,
