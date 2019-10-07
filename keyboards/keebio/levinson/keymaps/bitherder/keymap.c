@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_QWERTY] = LAYOUT_ortho_4x12( \
   KC_TAB,     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
-  KC_ESC,     KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
+  KC_ESC,     KC_A,    KC_S,   LT(_MOUSE, KC_D),    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
   KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, MT(MOD_RSFT, KC_ENT), \
   MO(_MOUSE), KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_LCTL, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
 ),
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ARENSITO] = LAYOUT_ortho_4x12( \
   KC_TAB,         KC_Q,    KC_L,    KC_COMM, KC_P,        KC_AT,   KC_PIPE, KC_F,         KC_U,    KC_D,    KC_K,    KC_BSPC,               \
-  KC_QUOTE,       KC_A,    KC_R,    KC_E,    KC_N,        KC_B,    KC_G,    KC_S,         KC_I,    KC_T,    KC_O,    S(KC_QUOTE),           \
+  KC_QUOTE,       KC_A,    KC_R,    LT(_MOUSE, KC_E),    KC_N,        KC_B,    KC_G,    KC_S,         KC_I,    KC_T,    KC_O,    S(KC_QUOTE), \
   MO(_ARE_SHIFT), KC_Z,    KC_W,    KC_DOT,  KC_H,        KC_J,    KC_V,    KC_C,         KC_Y,    KC_M,    KC_X,    LT(_ARE_SHIFT,KC_ENT), \
   MO(_MOUSE),     KC_LCTL, KC_LALT, KC_LGUI, MO(_ARE_LO), CTL_ESC, KC_SPC,  MO(_ARE_HI),  KC_RALT, KC_RGUI, KC_RCTL, MO(_MOUSE)             \
 ),
@@ -198,10 +198,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------''-----------------------------------------'
  */
 [_MOUSE] = LAYOUT_ortho_4x12( \
-  _______, _______, _______,    _______,    _______,     _______, _______, _______, _______, _______, _______, _______, \
-  _______, _______, KC_MS_BTN3, KC_MS_BTN2, KC_MS_BTN1,  _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, _______, \
-  _______, _______, _______,    _______,    _______,     _______, KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R, _______, _______, \
-  _______, _______, _______,    _______,    _______,     _______, _______, _______, _______, _______, _______, _______  \
+  _______, _______, _______, _______, KC_MS_BTN3, _______,   _______, _______, _______, _______, _______, _______, \
+  _______, _______, _______, _______, KC_MS_BTN1, _______,   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, _______, \
+  _______, _______, _______, _______, KC_MS_BTN2, _______,   KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R, _______, _______, \
+  _______, _______, _______, _______,    _______, _______,   _______, _______, _______, _______, _______, _______  \
 )
 
 };
