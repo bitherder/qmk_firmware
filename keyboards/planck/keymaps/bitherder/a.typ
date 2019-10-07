@@ -31,24 +31,25 @@ B:                             Lesson A1
 *:_A_R_L0
 T:			Welcome to lesson A1.
  :
- :In the A series of lessons, we will be learning to touch-type on the Arensito
- :keyboard layout.  I will introduce you to each letter on the keyboard, one at
- :a time.  By the time you have completed this series, you will be able to type
- :the entire alphabet, the numbers, and most of the punctuation keys by touch.
+ :In the A series of lessons, we will be learning to touch-type on the
+ :Arensito keyboard layout.  I will introduce you to each letter on the
+ :keyboard, one at a time.  By the time you have completed this series, you
+ :will be able to type the entire alphabet, the numbers, and most of the
+ :punctuation keys by touch.
  :
  :If you have never taken any lessons in typing before, please be patient.
  :Typing is not difficult but it does take a lot of practice.  Avoid the
- :tendency to look down at your fingers while typing.  This is a very bad habit
- :and is hard to break later.  If you hit the wrong key, I will let you know.
- :(But, I won't tell anyone else, so don't worry about it.)
+ :tendency to look down at your fingers while typing.  This is a very bad
+ :habit and is hard to break later.  If you hit the wrong key, I will let you
+ :know.  (But, I won't tell anyone else, so don't worry about it.)
  :
- :If you have always used the hunt-and-peck method, you will have an even harder
- :time keeping yourself from looking.  Don't be surprised if you find touch
- :typing slower than your old ways.  It may be slower when you first start.
- :But, touch typing is far faster once you get the hang of it.
+ :If you have always used the hunt-and-peck method, you will have an even
+ :harder time keeping yourself from looking.  Don't be surprised if you find
+ :touch typing slower than your old ways.  It may be slower when you first
+ :start.  But, touch typing is far faster once you get the hang of it.
  :
- :If you can already touch type, you should be able to go through these lessons
- :fairly quickly.  Or, you may want to go directly to the S series.
+ :If you can already touch type, you should be able to go through these
+ :lessons fairly quickly.  Or, you may want to go directly to the S series.
 
 *:_A_R_L1
 T:
@@ -62,12 +63,12 @@ T:
  :second finger on the I-key, your third finger on the T-key, and your
  :fourth-finger on the P-key.
  :
- :Similarly place the four fingers of your left hand on the N, E, R, and A-keys.
- :Place your right thumb over the SPACE bar.  (Henceforth, always hit the SPACE
- :bar with this thumb.)  Now, lift all your fingers slightly so that they are
- :poised just over the keys.  Each finger should be just barely touching its
- :home key.  This is an electronic keyboard and does not take much pressure to
- :accidentally press the key down.
+ :Similarly place the four fingers of your left hand on the N, E, R, and
+ :A-keys.  Place your right thumb over the SPACE bar.  (Henceforth, always hit
+ :the SPACE bar with this thumb.)  Now, lift all your fingers slightly so that
+ :they are poised just over the keys.  Each finger should be just barely
+ :touching its home key.  This is an electronic keyboard and does not take
+ :much pressure to accidentally press the key down.
  :
  :Above the E-key is the ,-key.  Above the I-key is the U-key.  Learn these
  :positions well.  Whenever you are about to type a line, look at your fingers
@@ -77,24 +78,26 @@ T:
 T:
  :			DRILL PATTERNS
  :
- :For the rest of this lesson, I will display a line of text in the middle of the
- :screen and instructions at the top of the screen.
+ :For the rest of this lesson, I will display a line of text in the middle of
+ :the screen and instructions at the top of the screen.
  :
  :All you have to do is type in the characters that you see in the middle of
- :the screen.  If you hit the correct key, I will not do anything.  If you make
- :a mistake, I will display a large X under the letter that you got wrong and
- :beep the terminal. In either event, just keep going by typing the next letter.
+ :the screen.  If you hit the correct key, I will not do anything.  If you
+ :make a mistake, I will display a large X under the letter that you got wrong
+ :and beep the terminal. In either event, just keep going by typing the next
+ :letter.
  :
- :When you have finished typing the line, hit the RETURN key.  To do this, extend
- :the little finger of your right hand over to the RETURN key.  Hit the key and
- :zip the finger back to its home position.  Be careful not to let your other
- :fingers move far from their home positions in the process.  Also, be careful
- :not to type an extra space at the end of the line.
+ :When you have finished typing the line, hit the RETURN key.  To do this,
+ :extend the little finger of your right hand over to the RETURN key.  Hit the
+ :key and zip the finger back to its home position.  Be careful not to let
+ :your other fingers move far from their home positions in the process.  Also,
+ :be careful not to type an extra space at the end of the line.
  :
- :If you made no mistakes on the line, I will display the next drill pattern.  If
- :you did make a mistake, I will beep at you and make you do the line again.  If
- :on the second try you made more than two mistakes, I will beep again and make
- :you try again, etc.  Don't forget to use your right thumb for the SPACE bar.
+ :If you made no mistakes on the line, I will display the next drill pattern.
+ :If you did make a mistake, I will beep at you and make you do the line
+ :again.  If on the second try you made more than two mistakes, I will beep
+ :again and make you try again, etc.  Don't forget to use your right thumb for
+ :the SPACE bar.
 
 I:(1) Try this:
 *:_A_R_L3
@@ -164,11 +167,13 @@ B:                             Lesson A2
 T:
  :			  (g b d f v m ')
  :
- :In this lesson you learn six new letters (G, B, D, F, V, M) and the single
- :quote. (').  Be sure that the N-finger does not linger on the G-key or the
- :S-finger on the G-key.  Also be sure to use your fingers as follows:
+ :In this lesson you learn six new letters (G, B, D, F, V, M) and the
+ :single quote. (').  Be sure that the N-finger does not linger on the
+ :G-key or the S-finger on the G-key.  Also be sure to use your fingers
+ :as follows:
  :
- : 'n' for (') and 'b', 's' for 'g', 'f' and 'v', finally use 't' for 'd' and 'm'
+ : 'n' for (') and 'b', 's' for 'g', 'f' and 'v',
+ : finally use 't' for 'd' and 'm'
 
 I:(1) Rhythm Drill
 *:_A_R_L13
