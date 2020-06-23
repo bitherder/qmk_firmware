@@ -203,7 +203,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_PIAP:
       if (record->event.pressed) {
 	if ( get_mods() & MOD_MASK_SHIFT) {
-            saved_keycode = KC_1;
+            saved_keycode = KC_7;
 	    register_code16(saved_keycode);
         } else {
 	    add_mods(MOD_LSFT);
