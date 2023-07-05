@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
-#include "muse.h"
+// #include "muse.h"
+#include "quantum.h"
 
 extern keymap_config_t keymap_config;
 
@@ -180,9 +181,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------''-----------------------------------------'
  */
 [_ADJUST] = LAYOUT_ortho_4x12( \
-  _______, RESET,   DEBUG,   _______, _______, _______,  _______, TERM_ON, TERM_OFF, _______, _______, KC_DEL,  \
-  _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM,  AG_SWAP, QWERTY,  ARENSITO, _______, _______, _______, \
-  _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,    MI_OFF,  _______, _______,  _______, _______, _______, \
+  _______, QK_BOOT, DB_TOGG, _______, _______, _______,  _______, _______, _______, _______, _______, KC_DEL, \
+  _______, _______, MU_NEXT,   AU_ON,  AU_OFF, AG_NORM,  AG_SWAP, QWERTY,  ARENSITO, _______, _______, _______, \
+  _______, AU_PREV, AU_NEXT,   MU_ON,  MU_OFF,   MI_ON,   MI_OFF,  _______, _______,  _______, _______, _______, \
   _______, _______, _______, _______, _______, _______,  _______, _______, _______,  _______, _______, _______  \
 ),
 
