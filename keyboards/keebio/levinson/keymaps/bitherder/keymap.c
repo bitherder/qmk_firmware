@@ -1,17 +1,7 @@
 #include QMK_KEYBOARD_H
-// #include "muse.h"
-#include "quantum.h"
 
 extern keymap_config_t keymap_config;
 
-#define CUR_EUR A(S(KC_2))
-#define CTL_ESC MT(MOD_LCTL, KC_ESC)
-#define CTL_SESC S(MT(MOD_LCTL, KC_ESC))
-
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
 enum custom_layers {
   _QWERTY,
   _ARENSITO,
@@ -23,6 +13,68 @@ enum custom_layers {
   _ADJUST,
   _MOUSE
 };
+
+// pseudo key codes
+#define KC_____  _______
+#define KC_XXXX  XXXXXXX
+#define CUR_EUR A(S(KC_2))
+#define CTL_ESC MT(MOD_LCTL, KC_ESC)
+#define CTL_SESC S(MT(MOD_LCTL, KC_ESC))
+#define KC_EUR   A(S(KC_2))
+#define KC_CESC  MT(MOD_LCTL, KC_ESC)
+#define KC_SCESC S(MT(MOD_LCTL, KC_ESC))
+#define KC_SNUHS S(KC_NUHS)
+#define KC_SNUBS S(KC_NUBS)
+#define KC_S_ENT MT(MOD_RSFT, KC_ENT)
+#define KC_D_MO  LT(_MOUSE, KC_D)
+#define KC_E_MO  LT(_MOUSE, KC_E)
+#define KC_MO   MO(_MOUSE)
+#define KC_S_F1 S(KC_F1)
+#define KC_S_F2 S(KC_F2)
+#define KC_S_F3 S(KC_F3)
+#define KC_S_F4 S(KC_F4)
+#define KC_S_F5 S(KC_F5)
+#define KC_S_F6 S(KC_F6)
+#define KC_S_F7 S(KC_F7)
+#define KC_S_F8 S(KC_F8)
+#define KC_S_F9 S(KC_F9)
+#define KC_S_F10 S(KC_F10)
+#define KC_S_F11 S(KC_F11)
+#define KC_S_F12 S(KC_F12)
+#define KC_BTAB S(KC_TAB)
+#define KC_S_Q S(KC_Q)
+#define KC_S_L S(KC_L)
+#define KC_S_P S(KC_P)
+#define KC_S_F S(KC_F)
+#define KC_S_U S(KC_U)
+#define KC_S_D S(KC_D)
+#define KC_S_K S(KC_K)
+#define KC_S_A S(KC_A)
+#define KC_S_R S(KC_R)
+#define KC_S_E S(KC_E)
+#define KC_S_N S(KC_N)
+#define KC_S_B S(KC_B)
+#define KC_S_G S(KC_G)
+#define KC_S_S S(KC_S)
+#define KC_S_I S(KC_I)
+#define KC_S_T S(KC_T)
+#define KC_S_O S(KC_O)
+#define KC_S_Z S(KC_Z)
+#define KC_S_X S(KC_X)
+#define KC_S_W S(KC_W)
+#define KC_S_H S(KC_H)
+#define KC_S_J S(KC_J)
+#define KC_S_V S(KC_V)
+#define KC_S_C S(KC_C)
+#define KC_S_Y S(KC_Y)
+#define KC_S_M S(KC_M)
+#define KC_S_X S(KC_X)
+
+#define KC_ARE_S MO(_ARE_SHIFT)
+#define KC_AREHI MO(_ARE_RAISE)
+#define KC_ARELO MO(_ARE_LOWER)
+#define KC_A_S_E LT(_ARE_SHIFT, KC_ENT)
+#define KC_ADJ   MO(_ADJUST)
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
@@ -50,11 +102,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Mouse | Ctrl | Alt  | GUI  |Lower | Spc  || Spc  |Raise | Left | Down |  Up  | Right |
  * `------------------------------------------''------------------------------------------'
  */
-[_QWERTY] = LAYOUT_ortho_4x12( \
-  KC_TAB,     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
-  KC_ESC,     KC_A,    KC_S,   LT(_MOUSE, KC_D),    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-  KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, MT(MOD_RSFT, KC_ENT), \
-  MO(_MOUSE), KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_LCTL, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT \
+[_QWERTY] = LAYOUT_ortho_4x12(
+ //┌───────┬───────┬───────┬───────┬───────┬───────┐ ┌───────┬───────┬───────┬───────┬───────┬──────────┐
+    KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,     KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSPC,
+ //├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
+    KC_ESC, KC_A,   KC_S,   KC_D_MO, KC_F,  KC_G,     KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,
+ //├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
+    KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,     KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_S_ENT,
+ //├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
+    KC_MO,  KC_LCTL,KC_LALT,KC_LGUI, LOWER, KC_CESC,  KC_SPC, RAISE,  KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT
+ //└───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
+
+     // KC_TAB,     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+     // KC_ESC,     KC_A,    KC_S,   LT(_MOUSE, KC_D),    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+     // KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, MT(MOD_RSFT, KC_ENT),
+     // MO(_MOUSE), KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_LCTL,         KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Arensito Base
@@ -69,11 +131,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-------------------------------------------''------------------------------------------'
  */
 
-[_ARENSITO] = LAYOUT_ortho_4x12( \
-  KC_TAB,         KC_Q,    KC_L,    KC_COMM, KC_P,        KC_AT,   KC_PIPE, KC_F,         KC_U,    KC_D,    KC_K,    KC_BSPC,               \
-  KC_QUOTE,       KC_A,    KC_R,    LT(_MOUSE, KC_E),    KC_N,        KC_B,    KC_G,    KC_S,         KC_I,    KC_T,    KC_O,    S(KC_QUOTE), \
-  MO(_ARE_SHIFT), KC_Z,    KC_W,    KC_DOT,  KC_H,        KC_J,    KC_V,    KC_C,         KC_Y,    KC_M,    KC_X,    LT(_ARE_SHIFT,KC_ENT), \
-  MO(_MOUSE),     KC_LCTL, KC_LALT, KC_LGUI, MO(_ARE_LO), CTL_ESC, KC_SPC,  MO(_ARE_HI),  KC_RALT, KC_RGUI, KC_RCTL, MO(_MOUSE)             \
+[_ARENSITO] = LAYOUT_ortho_4x12( 
+  KC_TAB,         KC_Q,    KC_L,    KC_COMM, KC_P,        KC_AT,   KC_PIPE, KC_F,         KC_U,    KC_D,    KC_K,    KC_BSPC,               
+  KC_QUOTE,       KC_A,    KC_R,    LT(_MOUSE, KC_E),    KC_N,        KC_B,    KC_G,    KC_S,         KC_I,    KC_T,    KC_O,    S(KC_QUOTE), 
+  MO(_ARE_SHIFT), KC_Z,    KC_W,    KC_DOT,  KC_H,        KC_J,    KC_V,    KC_C,         KC_Y,    KC_M,    KC_X,    LT(_ARE_SHIFT,KC_ENT), 
+  MO(_MOUSE),     KC_LCTL, KC_LALT, KC_LGUI, MO(_ARE_LO), CTL_ESC, KC_SPC,  MO(_ARE_HI),  KC_RALT, KC_RGUI, KC_RCTL, MO(_MOUSE)             
 ),
 
 /* Arensito Shift
