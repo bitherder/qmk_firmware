@@ -193,7 +193,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	    saved_keycode = KC_2;
 	    register_code16(saved_keycode);
 	    del_mods(MOD_LSFT);
-	    
         }
       } else {
 	unregister_code16(saved_keycode);
@@ -203,7 +202,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_PIAP:
       if (record->event.pressed) {
 	if ( get_mods() & MOD_MASK_SHIFT) {
-            saved_keycode = KC_1;
+            saved_keycode = KC_7;
 	    register_code16(saved_keycode);
         } else {
 	    add_mods(MOD_LSFT);
