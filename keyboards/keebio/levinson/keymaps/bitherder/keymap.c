@@ -269,7 +269,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_PIAP:
       if (record->event.pressed) {
 	if ( get_mods() & MOD_MASK_SHIFT) {
-            saved_keycode = KC_1;
+            saved_keycode = KC_7;
 	    register_code16(saved_keycode);
         } else {
 	    add_mods(MOD_LSFT);
@@ -371,50 +371,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
-
-/* bool process_record_user(uint16_t keycode, keyrecord_t *record) { */
-/*   switch (keycode) { */
-/*     case KC_QWERTY: */
-/*       if (record->event.pressed) { */
-/*         set_single_persistent_default_layer(_QWERTY); */
-/*       } */
-/*       return false; */
-/*       break; */
-/*     case KC_ARENSITO: */
-/*       if (record->event.pressed) { */
-/*         set_single_persistent_default_layer(_ARENSITO); */
-/*       } */
-/*       return false; */
-/*       break; */
-/*     case KC_LOWER: */
-/*       if (record->event.pressed) { */
-/*         layer_on(_LOWER); */
-/*         update_tri_layer(_LOWER, _RAISE, _ADJUST); */
-/*       } else { */
-/*         layer_off(_LOWER); */
-/*         update_tri_layer(_LOWER, _RAISE, _ADJUST); */
-/*       } */
-/*       return false; */
-/*       break; */
-/*     case KC_RAISE: */
-/*       if (record->event.pressed) { */
-/*         layer_on(_RAISE); */
-/*         update_tri_layer(_LOWER, _RAISE, _ADJUST); */
-/*       } else { */
-/*         layer_off(_RAISE); */
-/*         update_tri_layer(_LOWER, _RAISE, _ADJUST); */
-/*       } */
-/*       return false; */
-/*       break; */
-/*     case KC_ADJUST: */
-/*       if (record->event.pressed) { */
-/*         layer_on(_ADJUST); */
-/*       } else { */
-/*         layer_off(_ADJUST); */
-/*       } */
-/*       return false; */
-/*       break; */
-
-/*   } */
-/*   return true; */
-/* } */
