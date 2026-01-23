@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB,  KC_Q,    KC_L,    CMQS,    KC_P,    ATHS,                               PIAP,    KC_F,    KC_U,    KC_D,    KC_K,    KC_BSPC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     QTGV,    KC_A,    KC_R,    KC_E_MO, KC_N,    KC_B,                               KC_G,    KC_S,    KC_I,    KC_T,    KC_O,    DQTD,
+     QTGV,    KC_A,    KC_R,    KC_E,    KC_N,    KC_B,                               KC_G,    KC_S,    KC_I,    KC_T,    KC_O,    DQTD,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_W,    DTEX,    KC_H,    KC_J,    KC_ESC,           KC_RALT, KC_V,    KC_C,    KC_Y,    KC_M,    KC_X,    KC_S_ENT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      XXXXXXX, KC_A,    KC_O,    KC_T,    KC_E,    XXXXXXX, XXXXXXX,          XXXXXXX, XXXXXXX, KC_E,    KC_T,    KC_O,    KC_A,    XXXXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    LOWER,   KC_BSPC, KC_SPC,                    KC_SPC,  KC_BSPC, RAISE
+                                    LOWER,   KC_SPC,  KC_BSPC,                   KC_BSPC, KC_SPC,  RAISE
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -145,7 +145,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     _______,  _______, _______,                  _______,  _______,  _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
-
+  /*
   [_MOUSE] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      _______, _______, _______, _______, _______, _______,                             _______, _______, _______, _______, _______, _______,
@@ -159,6 +159,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     _______,  _______, _______,                  _______,  _______,  _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
+  */
   [_ADJUST] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      _______, QK_BOOT, DB_TOGG,  _______, _______, _______,                            _______, _______, _______,_______, _______, KC_DEL,
@@ -372,7 +373,7 @@ combo_t key_combos[] = {
   COMBO(cm_esc,KC_ESC),
   COMBO(cm_del,KC_DEL),
   COMBO(cm_algr,KC_ALGR),
-  COMBO(cm_lead,QK_LEAD),
+  COMBO(cm_lead,QK_LEADER),
   COMBO(cm_lgui,MY_LGUI),
   COMBO(cm_lalt,MY_LALT),
   COMBO(cm_lctl,MY_LCTL),
@@ -392,6 +393,38 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   static uint8_t saved_mods = 0;
   
   switch (keycode) {
+    case MY_LGUI:
+      if(record->event.pressed) {
+	add_oneshot_mods(MOD_BIT(KC_LGUI));
+        add_mods(MOD_BIT(KC_LGUI));
+      } else {
+	clear_mods();
+      }
+      break;
+    case MY_LALT:
+      if(record->event.pressed) {
+	add_oneshot_mods(MOD_BIT(KC_LALT));
+        add_mods(MOD_BIT(KC_LALT));
+      } else {
+	clear_mods();
+      }
+      break;
+    case MY_LCTL:
+      if(record->event.pressed) {
+	add_oneshot_mods(MOD_BIT(KC_LCTL));
+        add_mods(MOD_BIT(KC_LCTL));
+      } else {
+	clear_mods();
+      }
+      break;
+    case MY_LSFT:
+      if(record->event.pressed) {
+	add_oneshot_mods(MOD_BIT(KC_LSFT));
+        add_mods(MOD_BIT(KC_LSFT));
+      } else {
+	clear_mods();
+      }
+      break;
     case CMQS:
       if (record->event.pressed) {
 	if ( get_mods() & MOD_MASK_SHIFT) {
@@ -531,6 +564,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
   }
   return true;
+}
+
+void leader_end_user(void) {
+  if (leader_sequence_one_key(KC_1)) tap_code16(KC_F1);
+  if (leader_sequence_one_key(KC_2)) tap_code16(KC_F2);
+  if (leader_sequence_one_key(KC_3)) tap_code16(KC_F3);
+  if (leader_sequence_one_key(KC_4)) tap_code16(KC_F4);
+  if (leader_sequence_one_key(KC_5)) tap_code16(KC_F5);
+  if (leader_sequence_one_key(KC_6)) tap_code16(KC_F6);
+  if (leader_sequence_one_key(KC_7)) tap_code16(KC_F7);
+  if (leader_sequence_one_key(KC_8)) tap_code16(KC_F8);
+  if (leader_sequence_one_key(KC_9)) tap_code16(KC_F9);
+
+  if (leader_sequence_two_keys(KC_0, KC_0)) tap_code16(KC_F10);
+  if (leader_sequence_two_keys(KC_0, KC_2)) tap_code16(KC_F12);
+  if (leader_sequence_two_keys(KC_0, KC_3)) tap_code16(KC_F13);
+  if (leader_sequence_two_keys(KC_0, KC_4)) tap_code16(KC_F14);
+  if (leader_sequence_two_keys(KC_0, KC_5)) tap_code16(KC_F15);
+  if (leader_sequence_two_keys(KC_0, KC_6)) tap_code16(KC_F16);
+  if (leader_sequence_two_keys(KC_0, KC_7)) tap_code16(KC_F17);
+  if (leader_sequence_two_keys(KC_0, KC_8)) tap_code16(KC_F18);
+  if (leader_sequence_two_keys(KC_0, KC_9)) tap_code16(KC_F19);
 }
 
 bool encoder_updeate_user(uint8_t index, bool clockwise) {

@@ -36,3 +36,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_TIME_TO_MAX 60
 #define MOUSEKEY_MAX_SPEED 7
 #define MOUSEKEY_WHEEL_DELAY 0
+
+// Taipo related
+#undef NO_ACTION_ONESHOT
+
+#define LEADER_PER_KEY_TIMING
+#define LEADER_TIMEOUT 1000
+
+#define COMBO_TERM 50
+#define COMBO_MUST_HOLD_MODS
+
+#define TAP_CODE_DELAY 25
+#define TAPPING_FORCE_HOLD
