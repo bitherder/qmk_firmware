@@ -578,21 +578,3 @@ void leader_end_user(void) {
   if (leader_sequence_two_keys(KC_0, KC_8)) tap_code16(KC_F18);
   if (leader_sequence_two_keys(KC_0, KC_9)) tap_code16(KC_F19);
 }
-
-bool encoder_updeate_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_VOLU);
-        } else {
-            tap_code(KC_VOLD);
-        }
-    }
-    else if (index == 1) {
-        if (clockwise) {
-            tap_code(KC_PGDN);
-        } else {
-            tap_code(KC_PGUP);
-        }
-    }
-    return true;
-}
