@@ -280,6 +280,7 @@ const uint16_t PROGMEM cm_pgup[] = {KC_A,KC_R,KC_BSPC,COMBO_END};
 const uint16_t PROGMEM cm_home[] = {KC_O,KC_S,KC_BSPC,COMBO_END};
 const uint16_t PROGMEM cm_end[] = {KC_T,KC_N,KC_BSPC,COMBO_END};
 const uint16_t PROGMEM cm_pgdn[] = {KC_E,KC_I,KC_BSPC,COMBO_END};
+const uint16_t PROGMEM cm_adjust[] = {RAISE,LOWER,COMBO_END};
 
 combo_t key_combos[] = {
   COMBO(cm_s_e,S(KC_E)),
@@ -386,12 +387,13 @@ combo_t key_combos[] = {
   COMBO(cm_home,KC_HOME),
   COMBO(cm_end,KC_END),
   COMBO(cm_pgdn,KC_PGDN),
+  COMBO(cm_adjust,MO_ADJ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   static uint16_t saved_keycode;
   static uint8_t saved_mods = 0;
-  
+
   switch (keycode) {
     case MY_LGUI:
       if(record->event.pressed) {
@@ -534,26 +536,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    case LOWER:
-      if (record->event.pressed) {
-        layer_on(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      } else {
-        layer_off(_LOWER);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      }
-      return false;
-      break;
-    case RAISE:
-      if (record->event.pressed) {
-        layer_on(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      } else {
-        layer_off(_RAISE);
-        update_tri_layer(_LOWER, _RAISE, _ADJUST);
-      }
-      return false;
-      break;
     case ADJUST:
       if (record->event.pressed) {
         layer_on(_ADJUST);
@@ -566,6 +548,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+// Quite leader early if it's done
+bool leader_add_user(uint16_t keycode) {
+  if (keycode >= KC_1 && keycode <= KC_9) return true;
+  if (leader_sequence_two_keys(KC_0, KC_0)) return true;
+  return false;
+}
+
+// function key leader sequence for Taipo layout
 void leader_end_user(void) {
   if (leader_sequence_one_key(KC_1)) tap_code16(KC_F1);
   if (leader_sequence_one_key(KC_2)) tap_code16(KC_F2);
@@ -578,6 +568,7 @@ void leader_end_user(void) {
   if (leader_sequence_one_key(KC_9)) tap_code16(KC_F9);
 
   if (leader_sequence_two_keys(KC_0, KC_0)) tap_code16(KC_F10);
+  if (leader_sequence_two_keys(KC_0, KC_1)) tap_code16(KC_F11);
   if (leader_sequence_two_keys(KC_0, KC_2)) tap_code16(KC_F12);
   if (leader_sequence_two_keys(KC_0, KC_3)) tap_code16(KC_F13);
   if (leader_sequence_two_keys(KC_0, KC_4)) tap_code16(KC_F14);
