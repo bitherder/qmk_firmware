@@ -45,6 +45,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define COMBO_TERM 75
 #define COMBO_MUST_HOLD_MODS
+#define COMBO_SHOULD_TRIGGER
 
 #define TAP_CODE_DELAY 25
 #define TAPPING_FORCE_HOLD
