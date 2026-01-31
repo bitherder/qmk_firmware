@@ -43,7 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LEADER_PER_KEY_TIMING
 #define LEADER_TIMEOUT 1000
 
-#define COMBO_TERM 50
+#define COMBO_TERM 75
 #define COMBO_MUST_HOLD_MODS
 
 #define TAP_CODE_DELAY 25
