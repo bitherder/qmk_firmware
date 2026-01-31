@@ -26,6 +26,9 @@ enum custom_layers {
 #define MO_AREHI MO(_ARE_RAISE)
 #define MO_ARELO MO(_ARE_LOWER)
 #define MO_ADJ   MO(_ADJUST)
+#define QWERTY   PDF(_QWERTY)
+#define ARENSITO PDF(_ARENSITO)
+#define TAIPO    PDF(_TAIPO)
 
 enum custom_keycodes {
   CMQS = SAFE_RANGE,
@@ -38,12 +41,8 @@ enum custom_keycodes {
   MY_LALT,
   MY_LCTL,
   MY_LSFT,
-  QWERTY,
-  ARENSITO,
-  TAIPO,
   LOWER,
   RAISE,
-  ADJUST,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -174,7 +173,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   )
 };
-
 
 const uint16_t PROGMEM cm_s_e[] = {KC_E, KC_SPC, COMBO_END};
 const uint16_t PROGMEM cm_s_t[] = {KC_T,KC_SPC,COMBO_END};
@@ -631,32 +629,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         register_code16(saved_keycode);
       } else {
 	unregister_code16(saved_keycode);
-      }
-      return false;
-      break;
-    case QWERTY:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_QWERTY);
-      }
-      return false;
-      break;
-    case ARENSITO:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_ARENSITO);
-      }
-      return false;
-      break;
-    case TAIPO:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_TAIPO);
-      }
-      return false;
-      break;
-    case ADJUST:
-      if (record->event.pressed) {
-        layer_on(_ADJUST);
-      } else {
-        layer_off(_ADJUST);
       }
       return false;
       break;
