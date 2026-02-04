@@ -274,10 +274,10 @@ const uint16_t PROGMEM cm_right[] = {KC_A,KC_R,KC_SPC,COMBO_END};
 const uint16_t PROGMEM cm_up[] = {KC_O,KC_S,KC_SPC,COMBO_END};
 const uint16_t PROGMEM cm_down[] = {KC_T,KC_N,KC_SPC,COMBO_END};
 const uint16_t PROGMEM cm_left[] = {KC_E,KC_I,KC_SPC,COMBO_END};
-const uint16_t PROGMEM cm_pgup[] = {KC_A,KC_R,KC_BSPC,COMBO_END};
-const uint16_t PROGMEM cm_home[] = {KC_O,KC_S,KC_BSPC,COMBO_END};
-const uint16_t PROGMEM cm_end[] = {KC_T,KC_N,KC_BSPC,COMBO_END};
-const uint16_t PROGMEM cm_pgdn[] = {KC_E,KC_I,KC_BSPC,COMBO_END};
+const uint16_t PROGMEM cm_end[] = {KC_A,KC_R,KC_BSPC,COMBO_END};
+const uint16_t PROGMEM cm_pgup[] = {KC_O,KC_S,KC_BSPC,COMBO_END};
+const uint16_t PROGMEM cm_pgdn[] = {KC_T,KC_N,KC_BSPC,COMBO_END};
+const uint16_t PROGMEM cm_home[] = {KC_E,KC_I,KC_BSPC,COMBO_END};
 const uint16_t PROGMEM cm_adjust[] = {RAISE,LOWER,COMBO_END};
 
 enum combos {
