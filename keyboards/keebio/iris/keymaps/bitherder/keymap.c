@@ -11,7 +11,7 @@ enum custom_layers {
   _LOWER,
   _RAISE,
   _ADJUST,
-  _MOUSE
+  //  _MOUSE
 };
 
 // pseudo key codes
@@ -21,8 +21,8 @@ enum custom_layers {
 #define KC_SNUHS S(KC_NUHS)
 #define KC_SNUBS S(KC_NUBS)
 #define KC_S_ENT MT(MOD_RSFT, KC_ENT)
-#define KC_D_MO  LT(_MOUSE, KC_D)
-#define KC_E_MO  LT(_MOUSE, KC_E)
+// #define KC_D_MO  LT(_MOUSE, KC_D)
+// #define KC_E_MO  LT(_MOUSE, KC_E)
 #define MO_AREHI MO(_ARE_RAISE)
 #define MO_ARELO MO(_ARE_LOWER)
 #define MO_ADJ   MO(_ADJUST)
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_ESC,  KC_A,    KC_S,    KC_D_MO, KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+     KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_ESC,           KC_RALT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_S_ENT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
