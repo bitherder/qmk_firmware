@@ -17,6 +17,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#define NO_MUSIC_MODE
+#define AUDIO_PIN C6
+
 // #define USE_I2C
 // #define EE_HANDS
 
@@ -50,3 +53,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAP_CODE_DELAY 25
 #define TAPPING_FORCE_HOLD
+
+// Memory reduction
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
