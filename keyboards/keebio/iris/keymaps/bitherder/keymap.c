@@ -2,6 +2,10 @@
 
 extern keymap_config_t keymap_config;
 
+#ifdef AUDIO_ENABLE
+  float guitar_song[][2] = SONG(GUITAR_SOUND);
+#endif
+
 enum custom_layers {
   _QWERTY,
   _ARENSITO,
@@ -43,6 +47,7 @@ enum custom_keycodes {
   MY_LSFT,
   LOWER,
   RAISE,
+  NOISE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -665,4 +670,11 @@ void leader_end_user(void) {
   if (leader_sequence_two_keys(KC_0, KC_7)) tap_code16(KC_F17);
   if (leader_sequence_two_keys(KC_0, KC_8)) tap_code16(KC_F18);
   if (leader_sequence_two_keys(KC_0, KC_9)) tap_code16(KC_F19);
+
+# ifdef AUDIO_ENABLE
+    if (leader_sequence_one_key(KC_A)) tap_code16(AU_TOGG);
+    if (leader_sequence_one_key(KC_N)) {
+      PLAY_SONG(guitar_song);
+    }
+# endif
 }
