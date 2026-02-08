@@ -41,10 +41,6 @@ enum custom_keycodes {
   DQTD,
   QTGV,
   DTEX,
-  MY_LGUI,
-  MY_LALT,
-  MY_LCTL,
-  MY_LSFT,
   LOWER,
   RAISE,
   NOISE
@@ -486,10 +482,10 @@ combo_t key_combos[] = {
   [CM_DEL] = COMBO(cm_del,KC_DEL),
   [CM_ALGR] = COMBO(cm_algr,KC_ALGR),
   [CM_LEAD] = COMBO(cm_lead,QK_LEADER),
-  [CM_LGUI] = COMBO(cm_lgui,MY_LGUI),
-  [CM_LALT] = COMBO(cm_lalt,MY_LALT),
-  [CM_LCTL] = COMBO(cm_lctl,MY_LCTL),
-  [CM_LSFT] = COMBO(cm_lsft,MY_LSFT),
+  [CM_LGUI] = COMBO(cm_lgui,OS_LGUI),
+  [CM_LALT] = COMBO(cm_lalt,OS_LALT),
+  [CM_LCTL] = COMBO(cm_lctl,OS_LCTL),
+  [CM_LSFT] = COMBO(cm_lsft,OS_LSFT),
   [CM_RIGHT] = COMBO(cm_right,KC_RIGHT),
   [CM_UP] = COMBO(cm_up,KC_UP),
   [CM_DOWN] = COMBO(cm_down,KC_DOWN),
@@ -514,38 +510,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   static uint8_t saved_mods = 0;
 
   switch (keycode) {
-    case MY_LGUI:
-      if(record->event.pressed) {
-	add_oneshot_mods(MOD_BIT(KC_LGUI));
-        add_mods(MOD_BIT(KC_LGUI));
-      } else {
-	clear_mods();
-      }
-      break;
-    case MY_LALT:
-      if(record->event.pressed) {
-	add_oneshot_mods(MOD_BIT(KC_LALT));
-        add_mods(MOD_BIT(KC_LALT));
-      } else {
-	clear_mods();
-      }
-      break;
-    case MY_LCTL:
-      if(record->event.pressed) {
-	add_oneshot_mods(MOD_BIT(KC_LCTL));
-        add_mods(MOD_BIT(KC_LCTL));
-      } else {
-	clear_mods();
-      }
-      break;
-    case MY_LSFT:
-      if(record->event.pressed) {
-	add_oneshot_mods(MOD_BIT(KC_LSFT));
-        add_mods(MOD_BIT(KC_LSFT));
-      } else {
-	clear_mods();
-      }
-      break;
     case CMQS:
       if (record->event.pressed) {
 	if ( get_mods() & MOD_MASK_SHIFT) {
