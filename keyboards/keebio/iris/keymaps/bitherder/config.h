@@ -17,8 +17,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#define NO_MUSIC_MODE
-#define AUDIO_PIN C6
+#ifdef AUDIO_ENABLE
+#  define NO_MUSIC_MODE
+#  define AUDIO_PIN C6
+#  define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND),  \
+                                SONG(COLEMAK_SOUND), \
+                                SONG(DVORAK_SOUND)   \
+                              }
+#endif
 
 // #define USE_I2C
 // #define EE_HANDS
@@ -57,3 +63,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Memory reduction
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
+#define LAYER_STATE_8BIT
