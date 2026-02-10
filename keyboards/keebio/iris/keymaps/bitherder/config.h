@@ -63,7 +63,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define EXTRA_SHORT_COMBOS
 
 #define TAP_CODE_DELAY 25
-#define TAPPING_FORCE_HOLD
+// #define TAPPING_FORCE_HOLD
+#define ONESHOT_TAP_TOGGLE 2
 
 // Memory reduction
 #undef LOCKING_SUPPORT_ENABLE
