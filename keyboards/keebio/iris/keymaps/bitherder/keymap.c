@@ -4,6 +4,15 @@ extern keymap_config_t keymap_config;
 
 #ifdef AUDIO_ENABLE
   float guitar_song[][2] = SONG(GUITAR_SOUND);
+  float caps_lock_on_song[][2] = SONG(CAPS_LOCK_ON_SOUND);
+  float caps_lock_off_song[][2] = SONG(CAPS_LOCK_OFF_SOUND);
+  float ctr_lock_on_song[][2] = SONG(Q__NOTE(_A5), Q__NOTE(_B5));
+  float ctr_lock_off_song[][2] = SONG(Q__NOTE(_B5), Q__NOTE(_A5));
+  float alt_lock_on_song[][2] = SONG(Q__NOTE(_B5), Q__NOTE(_CS6));
+  float alt_lock_off_song[][2] = SONG(Q__NOTE(_CS6), Q__NOTE(_B5));
+  float gui_lock_on_song[][2] = SONG(Q__NOTE(_CS6), Q__NOTE(_D6));
+  float gui_lock_off_song[][2] = SONG(Q__NOTE(_D6), Q__NOTE(_CS6));
+
 #endif
 
 enum custom_layers {
@@ -548,4 +557,24 @@ void leader_end_user(void) {
 # endif
 }
 
+#ifdef AUDIO_ENABLE
+  void oneshot_locked_mods_changed_user(uint8_t mods) {
+    static uint8_t saved_mods = 0;
+    uint8_t on_mods = mods & ~saved_mods;
+    uint8_t off_mods = saved_mods & ~mods;
 
+    // notify if locks are on
+    if (on_mods & MOD_MASK_SHIFT) PLAY_SONG(caps_lock_on_song);
+    if (on_mods & MOD_MASK_CTRL)  PLAY_SONG(ctr_lock_on_song);
+    if (on_mods & MOD_MASK_ALT)   PLAY_SONG(alt_lock_on_song);
+    if (on_mods & MOD_MASK_GUI)   PLAY_SONG(gui_lock_on_song);
+
+    // notify if locks are off
+    if (off_mods & MOD_MASK_SHIFT) PLAY_SONG(caps_lock_off_song);
+    if (off_mods & MOD_MASK_CTRL)  PLAY_SONG(ctr_lock_off_song);
+    if (off_mods & MOD_MASK_ALT)   PLAY_SONG(alt_lock_off_song);
+    if (off_mods & MOD_MASK_GUI)   PLAY_SONG(gui_lock_off_song);
+
+    saved_mods = mods;
+  }
+#endif
