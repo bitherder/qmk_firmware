@@ -35,15 +35,9 @@ enum custom_layers {
 #define TAIPO    PDF(_TAIPO)
 
 enum custom_keycodes {
-  CMQS = SAFE_RANGE,
-  ATHS,
-  PIAP,
-  DQTD,
-  QTGV,
-  DTEX,
-  LOWER,
+  LOWER = SAFE_RANGE,
   RAISE,
-  NOISE
+  NOISE,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -66,13 +60,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                              KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_TAB,  KC_Q,    KC_L,    CMQS,    KC_P,    ATHS,                               PIAP,    KC_F,    KC_U,    KC_D,    KC_K,    KC_BSPC,
+     KC_TAB,  KC_Q,    KC_L,    KC_COMM, KC_P,    KC_AT,                              KC_PIPE, KC_F,    KC_U,    KC_D,    KC_K,    KC_BSPC,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     QTGV,    KC_A,    KC_R,    KC_E,    KC_N,    KC_B,                               KC_G,    KC_S,    KC_I,    KC_T,    KC_O,    DQTD,
+     KC_QUOT, KC_A,    KC_R,    KC_E,    KC_N,    KC_B,                               KC_G,    KC_S,    KC_I,    KC_T,    KC_O,    KC_DQT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT, KC_Z,    KC_W,    DTEX,    KC_H,    KC_J,    KC_ESC,           KC_RALT, KC_V,    KC_C,    KC_Y,    KC_M,    KC_X,    KC_S_ENT,
+     KC_LSFT, KC_Z,    KC_W,    KC_DOT,  KC_H,    KC_J,    KC_ESC,           KC_RALT, KC_V,    KC_C,    KC_Y,    KC_M,    KC_X,    KC_S_ENT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    KC_LGUI, MO_ARELO, KC_CESC,                 KC_SPC,   MO_AREHI, KC_LALT
+                                    KC_LGUI, MO_ARELO, KC_CESC,                  KC_SPC,  MO_AREHI,KC_LALT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -173,6 +167,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     _______, _______, _______,                   _______, _______, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   )
+};
+
+// arensito custom shift keyseater
+// see https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
+const custom_shift_key_t custom_shift_keys[] = {
+  {KC_COMM, KC_QUES},
+  {KC_AT,   KC_HASH},
+  {KC_PIPE, KC_AMPR},
+  {KC_DQT,  KC_TILD},
+  {KC_QUOT, KC_GRAVE},
+  {KC_DOT,  KC_EXLM}
 };
 
 const uint16_t PROGMEM cm_s_e[] = {KC_E, KC_SPC, COMBO_END};
@@ -503,106 +508,6 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
   } else {
     return IS_LAYER_ON_STATE(default_layer_state, _TAIPO);
   }
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  static uint16_t saved_keycode;
-  static uint8_t saved_mods = 0;
-
-  switch (keycode) {
-    case CMQS:
-      if (record->event.pressed) {
-	if ( get_mods() & MOD_MASK_SHIFT) {
-            saved_keycode = KC_SLSH;
-        } else {
-            saved_keycode = KC_COMM;
-        }
-        register_code16(saved_keycode);
-      } else {
-	unregister_code16(saved_keycode);
-      }
-      return false;
-      break;
-    case ATHS:
-      if (record->event.pressed) {
-	if ( get_mods() & MOD_MASK_SHIFT) {
-            saved_keycode = KC_3;
-	    register_code16(saved_keycode);
-        } else {
-	    add_mods(MOD_LSFT);
-	    saved_keycode = KC_2;
-	    register_code16(saved_keycode);
-	    del_mods(MOD_LSFT);
-        }
-      } else {
-	unregister_code16(saved_keycode);
-      }
-      return false;
-      break;
-    case PIAP:
-      if (record->event.pressed) {
-	if ( get_mods() & MOD_MASK_SHIFT) {
-            saved_keycode = KC_7;
-	    register_code16(saved_keycode);
-        } else {
-	    add_mods(MOD_LSFT);
-	    saved_keycode = KC_BSLS;
-	    register_code16(saved_keycode);
-	    del_mods(MOD_LSFT);
-        }
-      } else {
-	unregister_code16(saved_keycode);
-      }
-      return false;
-      break;
-    case QTGV:
-      if (record->event.pressed) {
-	if ( get_mods() & MOD_MASK_SHIFT) {
-  	    saved_mods = get_mods() & MOD_MASK_SHIFT; // Mask off anything that isn't Shift
-	    del_mods(saved_mods); // Remove any Shifts present
-            saved_keycode = KC_GRV;
-	    register_code16(saved_keycode);
-	    add_mods(saved_mods);
-        } else {
-	    saved_keycode = KC_QUOT;
-	    register_code16(saved_keycode);
-        }
-      } else {
-	unregister_code16(saved_keycode);
-      }
-      return false;
-      break;
-    case DQTD:
-      if (record->event.pressed) {
-	if ( get_mods() & MOD_MASK_SHIFT) {
-            saved_keycode = KC_GRV;
-	    register_code16(saved_keycode);
-        } else {
-	    add_mods(MOD_LSFT);
-	    saved_keycode = KC_QUOT;
-	    register_code16(saved_keycode);
-	    del_mods(MOD_LSFT);
-        }
-      } else {
-	unregister_code16(saved_keycode);
-      }
-      return false;
-      break;
-    case DTEX:
-      if (record->event.pressed) {
-	if ( get_mods() & MOD_MASK_SHIFT) {
-            saved_keycode = KC_1;
-        } else {
-            saved_keycode = KC_DOT;
-        }
-        register_code16(saved_keycode);
-      } else {
-	unregister_code16(saved_keycode);
-      }
-      return false;
-      break;
-  }
-  return true;
 }
 
 // Quite leader early if it's done

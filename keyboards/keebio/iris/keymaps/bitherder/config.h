@@ -40,11 +40,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_VAL_STEP 8
 
 // Mousekey configuration
+
+
 /* #define MOUSEKEY_INTERVAL 16 */
 /* #define MOUSEKEY_DELAY 0 */
 /* #define MOUSEKEY_TIME_TO_MAX 60 */
 /* #define MOUSEKEY_MAX_SPEED 7 */
 /* #define MOUSEKEY_WHEEL_DELAY 0 */
+
+// Arensito related
+#define CUSTOM_SHIFT_KEYS_LAYER_MASK (1 << 1)
 
 // Taipo related
 #undef NO_ACTION_ONESHOT
