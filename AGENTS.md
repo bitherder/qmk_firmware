@@ -35,6 +35,7 @@ git merge qmk/master
 - **Flash**: `qmk flash -kb keebio/levinson/rev2 -km bitherder`
 - **Firmware size**: ~80% capacity (23190/28672 bytes)
 - **Features**: Mouse keys, Custom shift keys
+- **CRITICAL**: Levinson rules.mk MUST include `BOOTLOADER = atmel-dfu` for flashing to work. Do not remove this setting.
 
 ## Userspace Structure
 
