@@ -4,9 +4,6 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
-
-// Include the custom_shift_keys module header
-// The module path is added to EXTRAINCDIRS in users/bitherder/rules.mk
 #include "custom_shift_keys.h"
 
 // NOTE: Arensito layer indices (_ARENSITO, _ARE_RAISE, _ARE_LOWER) should be

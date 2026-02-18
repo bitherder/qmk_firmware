@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "bitherder.h"
 
 extern keymap_config_t keymap_config;
 
@@ -19,13 +20,7 @@ enum custom_layers { _QWERTY, _ARENSITO, _ARE_LOWER, _ARE_RAISE, _LOWER, _RAISE,
 #define KC_ADJ MO(_ADJUST)
 
 enum custom_keycodes {
-    KC_CMQS = SAFE_RANGE,
-    KC_ATHS,
-    KC_PIAP,
-    KC_DQTD,
-    KC_QTGV,
-    KC_DTEX,
-    KC_QWERTY,
+    KC_QWERTY = SAFE_RANGE,
     KC_ARENSITO,
     KC_LOWER,
     KC_RAISE,
@@ -71,11 +66,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ARENSITO] = LAYOUT_ortho_4x12(
         // ┌───────┬───────┬───────┬───────┬───────┬───────┐ ┌───────┬───────┬───────┬───────┬───────┬──────────┐
-        KC_TAB, KC_Q, KC_L, KC_CMQS, KC_P, KC_ATHS, KC_PIAP, KC_F, KC_U, KC_D, KC_K, KC_BSPC,
+        KC_TAB, KC_Q, KC_L, KC_COMM, KC_P, KC_AT, KC_PIPE, KC_F, KC_U, KC_D, KC_K, KC_BSPC,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        KC_QTGV, KC_A, KC_R, KC_E_MO, KC_N, KC_B, KC_G, KC_S, KC_I, KC_T, KC_O, KC_DQTD,
+        KC_QUOT, KC_A, KC_R, KC_E_MO, KC_N, KC_B, KC_G, KC_S, KC_I, KC_T, KC_O, KC_DQT,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        KC_LSFT, KC_Z, KC_W, KC_DTEX, KC_H, KC_J, KC_V, KC_C, KC_Y, KC_M, KC_X, KC_S_ENT,
+        KC_LSFT, KC_Z, KC_W, KC_DOT, KC_H, KC_J, KC_V, KC_C, KC_Y, KC_M, KC_X, KC_S_ENT,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         KC_MO, KC_LCTL, KC_LALT, KC_LGUI, KC_ARELO, KC_CESC, KC_SPC, KC_AREHI, KC_RALT, KC_RGUI, KC_RCTL, KC_MO
         // └───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
@@ -222,102 +217,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    static uint16_t saved_keycode;
-    static uint8_t  saved_mods = 0;
+// ============================================================================
+// ARENSITO CUSTOM SHIFT KEYS (from userspace)
+// ============================================================================
+// Custom shift keys for Arensito layout, defined using macro from userspace
+// see https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
+//
+// NOTE: Due to QMK module limitations, the array must be defined here (not just
+// referenced from userspace) because the module's introspection uses ARRAY_SIZE()
+// which requires a direct array definition. However, the actual key mappings come
+// from the ARENSITO_CUSTOM_SHIFT_KEYS macro in users/bitherder/arensito.h, so the
+// data is centralized and shared across keyboards.
+const custom_shift_key_t custom_shift_keys[]   = {ARENSITO_CUSTOM_SHIFT_KEYS};
+uint8_t                  NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_keys[0]);
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_CMQS:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_SLSH;
-                } else {
-                    saved_keycode = KC_COMM;
-                }
-                register_code16(saved_keycode);
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_ATHS:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_3;
-                    register_code16(saved_keycode);
-                } else {
-                    add_mods(MOD_LSFT);
-                    saved_keycode = KC_2;
-                    register_code16(saved_keycode);
-                    del_mods(MOD_LSFT);
-                }
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_PIAP:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_7;
-                    register_code16(saved_keycode);
-                } else {
-                    add_mods(MOD_LSFT);
-                    saved_keycode = KC_BSLS;
-                    register_code16(saved_keycode);
-                    del_mods(MOD_LSFT);
-                }
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_QTGV:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_mods = get_mods() & MOD_MASK_SHIFT; // Mask off anything that isn't Shift
-                    del_mods(saved_mods);                     // Remove any Shifts present
-                    saved_keycode = KC_GRV;
-                    register_code16(saved_keycode);
-                    add_mods(saved_mods);
-                } else {
-                    saved_keycode = KC_QUOT;
-                    register_code16(saved_keycode);
-                }
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_DQTD:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_GRV;
-                    register_code16(saved_keycode);
-                } else {
-                    add_mods(MOD_LSFT);
-                    saved_keycode = KC_QUOT;
-                    register_code16(saved_keycode);
-                    del_mods(MOD_LSFT);
-                }
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_DTEX:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_1;
-                } else {
-                    saved_keycode = KC_DOT;
-                }
-                register_code16(saved_keycode);
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
         case KC_QWERTY:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_QWERTY);
