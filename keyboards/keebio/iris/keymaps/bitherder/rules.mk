@@ -17,3 +17,5 @@ GRAVE_ESC_ENABLE = no
 MAGIC_ENABLE = no
 MUSIC_ENABLE = no
 ENCODER_ENABLE = no
+
+SRC += songs.c
