@@ -33,12 +33,13 @@
 //       ARENSITO_CUSTOM_SHIFT_KEYS
 //   };
 //
-#define ARENSITO_CUSTOM_SHIFT_KEYS                          \
-    {KC_COMM, KC_QUES},      /* , becomes ? when shifted */ \
-        {KC_AT, KC_HASH},    /* @ becomes # when shifted */ \
-        {KC_PIPE, KC_AMPR},  /* | becomes & when shifted */ \
-        {KC_DQT, KC_TILD},   /* " becomes ~ when shifted */ \
-        {KC_QUOT, KC_GRAVE}, /* ' becomes ` when shifted */ \
-    {                                                       \
-        KC_DOT, KC_EXLM                                     \
-    } /* . becomes ! when shifted */
+// clang-format off
+#define ARENSITO_CUSTOM_SHIFT_KEYS                      \
+    {KC_COMM, KC_QUES},  /* , becomes ? when shifted */ \
+    {KC_AT,   KC_HASH},  /* @ becomes # when shifted */ \
+    {KC_PIPE, KC_AMPR},  /* | becomes & when shifted */ \
+    {KC_DQT,  KC_TILD},  /* " becomes ~ when shifted */ \
+    {KC_QUOT, KC_GRAVE}, /* ' becomes ` when shifted */ \
+    {KC_DOT,  KC_EXLM}   /* . becomes ! when shifted */ \
+    /* END */
+// clang-format on
