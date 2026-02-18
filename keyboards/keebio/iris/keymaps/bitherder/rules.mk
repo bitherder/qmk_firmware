@@ -1,3 +1,6 @@
+# Include bitherder userspace
+USER_NAME := bitherder
+
 RGBLIGHT_ENABLE = yes
 BACKLIGHT_ENABLE = no
 MOUSEKEY_ENABLE = no
