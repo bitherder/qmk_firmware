@@ -39,15 +39,6 @@ enum custom_keycodes {
     NOISE,
 };
 
-/*
- * LAYOUT FORMATTING GUIDE:
- * - Each keycode is padded to 8 characters (keycode + comma + space)
- * - Comment lines start with two spaces followed by "//"
- * - The visual grid uses box-drawing characters aligned with the keycodes
- * - There's a large visual gap between left and right keyboard halves
- * - The thumb cluster row (bottom) has 20 spaces before the first keycode
- * - Maintain vertical alignment - each column of keycodes should line up
- */
 // clang-format off
 /*
  * LAYOUT FORMATTING GUIDE:
@@ -58,7 +49,6 @@ enum custom_keycodes {
  * - The thumb cluster row (bottom) has 20 spaces before the first keycode
  * - Maintain vertical alignment - each column of keycodes should line up
  */
-// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] =  LAYOUT(
