@@ -228,8 +228,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // which requires a direct array definition. However, the actual key mappings come
 // from the ARENSITO_CUSTOM_SHIFT_KEYS macro in users/bitherder/arensito.h, so the
 // data is centralized and shared across keyboards.
-const custom_shift_key_t custom_shift_keys[]   = {ARENSITO_CUSTOM_SHIFT_KEYS};
-uint8_t                  NUM_CUSTOM_SHIFT_KEYS = sizeof(custom_shift_keys) / sizeof(custom_shift_keys[0]);
+const custom_shift_key_t custom_shift_keys[] = {ARENSITO_CUSTOM_SHIFT_KEYS};
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
