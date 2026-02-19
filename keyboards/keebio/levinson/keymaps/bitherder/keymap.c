@@ -1,30 +1,19 @@
 #include QMK_KEYBOARD_H
 #include "bitherder.h"
 
-extern keymap_config_t keymap_config;
-
 enum custom_layers { _QWERTY, _ARENSITO, _ARE_LOWER, _ARE_RAISE, _LOWER, _RAISE, _ADJUST, _MOUSE };
 
-// pseudo key codes
-#define KC_EUR A(S(KC_2))
-#define KC_CESC MT(MOD_LCTL, KC_ESC)
-#define KC_SCESC S(MT(MOD_LCTL, KC_ESC))
-#define KC_SNUHS S(KC_NUHS)
-#define KC_SNUBS S(KC_NUBS)
-#define KC_S_ENT MT(MOD_RSFT, KC_ENT)
-#define KC_D_MO LT(_MOUSE, KC_D)
-#define KC_E_MO LT(_MOUSE, KC_E)
-#define KC_MO MO(_MOUSE)
-#define KC_AREHI MO(_ARE_RAISE)
-#define KC_ARELO MO(_ARE_LOWER)
-#define KC_ADJ MO(_ADJUST)
+// Arensito-specific keycodes
+#define AREHI MO(_ARE_RAISE)
+#define ARELO MO(_ARE_LOWER)
+#define ADJ MO(_ADJUST)
 
 enum custom_keycodes {
-    KC_QWERTY = SAFE_RANGE,
-    KC_ARENSITO,
-    KC_LOWER,
-    KC_RAISE,
-    KC_ADJUST,
+    QWERTY = SAFE_RANGE,
+    ARENSITO,
+    LOWER,
+    RAISE,
+    ADJUST,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -48,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_S_ENT,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        KC_MO, KC_LCTL, KC_LALT, KC_LGUI, KC_LOWER, KC_CESC, KC_SPC, KC_RAISE, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
+        KC_MO, KC_LCTL, KC_LALT, KC_LGUI, LOWER, KC_CESC, KC_SPC, RAISE, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
         // └───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
         ),
 
@@ -72,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         KC_LSFT, KC_Z, KC_W, KC_DOT, KC_H, KC_J, KC_V, KC_C, KC_Y, KC_M, KC_X, KC_S_ENT,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        KC_MO, KC_LCTL, KC_LALT, KC_LGUI, KC_ARELO, KC_CESC, KC_SPC, KC_AREHI, KC_RALT, KC_RGUI, KC_RCTL, KC_MO
+        KC_MO, KC_LCTL, KC_LALT, KC_LGUI, ARELO, KC_CESC, KC_SPC, AREHI, KC_RALT, KC_RGUI, KC_RCTL, KC_MO
         // └───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
         ),
 
@@ -96,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         KC_EUR, KC_6, KC_7, KC_8, KC_9, KC_PLUS, KC_ASTR, KC_2, KC_3, KC_4, KC_5, XXXXXXX,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        _______, _______, _______, _______, KC_ADJ, _______, _______, _______, _______, _______, _______, _______
+        _______, _______, _______, _______, ADJ, _______, _______, _______, _______, _______, _______, _______
         // └───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
         ),
 
@@ -119,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, _______,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        _______, _______, _______, _______, _______, _______, _______, KC_ADJ, _______, _______, _______, _______
+        _______, _______, _______, _______, _______, _______, _______, ADJ, _______, _______, _______, _______
         // └───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
         ),
 
@@ -184,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // ┌───────┬───────┬───────┬───────┬───────┬───────┐ ┌───────┬───────┬───────┬───────┬───────┬──────────┐
         _______, QK_BOOT, DB_TOGG, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        _______, _______, MU_NEXT, AU_ON, AU_OFF, AG_NORM, AG_SWAP, KC_QWERTY, KC_ARENSITO, _______, _______, _______,
+        _______, _______, MU_NEXT, AU_ON, AU_OFF, AG_NORM, AG_SWAP, QWERTY, ARENSITO, _______, _______, _______,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         _______, AU_PREV, AU_NEXT, MU_ON, MU_OFF, MI_ON, MI_OFF, _______, _______, _______, _______, _______,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
@@ -232,19 +221,19 @@ const custom_shift_key_t custom_shift_keys[] = {ARENSITO_CUSTOM_SHIFT_KEYS};
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_QWERTY:
+        case QWERTY:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_QWERTY);
             }
             return false;
             break;
-        case KC_ARENSITO:
+        case ARENSITO:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_ARENSITO);
             }
             return false;
             break;
-        case KC_LOWER:
+        case LOWER:
             if (record->event.pressed) {
                 layer_on(_LOWER);
                 update_tri_layer(_LOWER, _RAISE, _ADJUST);
@@ -254,7 +243,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case KC_RAISE:
+        case RAISE:
             if (record->event.pressed) {
                 layer_on(_RAISE);
                 update_tri_layer(_LOWER, _RAISE, _ADJUST);
@@ -264,7 +253,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case KC_ADJUST:
+        case ADJUST:
             if (record->event.pressed) {
                 layer_on(_ADJUST);
             } else {

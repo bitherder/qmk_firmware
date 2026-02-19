@@ -22,18 +22,10 @@ enum custom_layers {
     _LOWER,
     _RAISE,
     _ADJUST,
-    //  _MOUSE
+    // _MOUSE  // Disabled due to firmware capacity constraints
 };
 
-// pseudo key codes
-#define KC_EUR A(S(KC_2))
-#define KC_CESC MT(MOD_LCTL, KC_ESC)
-#define KC_SCESC S(MT(MOD_LCTL, KC_ESC))
-#define KC_SNUHS S(KC_NUHS)
-#define KC_SNUBS S(KC_NUBS)
-#define KC_S_ENT MT(MOD_RSFT, KC_ENT)
-// #define KC_D_MO  LT(_MOUSE, KC_D)
-// #define KC_E_MO  LT(_MOUSE, KC_E)
+// Arensito-specific keycodes
 #define MO_AREHI MO(_ARE_RAISE)
 #define MO_ARELO MO(_ARE_LOWER)
 #define MO_ADJ MO(_ADJUST)
@@ -173,12 +165,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, _______, _______, _______, MS_BTN3, _______,                            KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT, _______, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, _______, _______, _______, MS_BTN1, _______,                            MS_LEFT, MS_DOWN, MS_UP, MS_RGHT, _______, _______,
+     _______, _______, _______, _______, MS_BTN1, _______,                            MS_LEFT, MS_DOWN, MS_UP,   MS_RGHT, _______, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, _______, _______, _______, MS_BTN2, _______, _______,          _______, MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR, _______, KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______,  _______, _______,                  _______,  _______,  _______
-                                // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+                                     _______, _______, _______,                   _______, _______, _______
+                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
   */
   [_ADJUST] = LAYOUT(
