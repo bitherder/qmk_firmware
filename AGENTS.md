@@ -93,6 +93,23 @@ This ensures:
 - Include paths are correctly configured
 - No stale build artifacts cause issues
 
+### Efficient Compile Output Analysis
+
+When analyzing compile output, save the result to a file and interrogate it with multiple commands rather than re-running the compile:
+
+```bash
+# Run compile once and save output
+qmk compile -c -kb keebio/levinson/rev2 -km bitherder 2>&1 > /tmp/compile_output.txt
+
+# Then interrogate the saved output multiple times
+grep "error:" /tmp/compile_output.txt
+grep "Linking" /tmp/compile_output.txt
+grep "firmware size" /tmp/compile_output.txt
+grep "custom_shift" /tmp/compile_output.txt
+```
+
+This is much faster and more reliable than running the full compile multiple times with different filters.
+
 ### After Updating from Upstream
 
 Always verify both active keyboards compile after pulling upstream changes:
