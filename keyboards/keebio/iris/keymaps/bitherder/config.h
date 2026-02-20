@@ -18,12 +18,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 #ifdef AUDIO_ENABLE
-#  define NO_MUSIC_MODE
-#  define AUDIO_PIN C6
-#  define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND),  \
-                                SONG(COLEMAK_SOUND), \
-                                SONG(DVORAK_SOUND)   \
-                              }
+#    define NO_MUSIC_MODE
+#    define AUDIO_PIN C6
+#    define DEFAULT_LAYER_SONGS {SONG(QWERTY_SOUND), SONG(COLEMAK_SOUND), SONG(DVORAK_SOUND)}
 #endif
 
 // #define USE_I2C
@@ -40,7 +37,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_VAL_STEP 8
 
 // Mousekey configuration
-
 
 /* #define MOUSEKEY_INTERVAL 16 */
 /* #define MOUSEKEY_DELAY 0 */

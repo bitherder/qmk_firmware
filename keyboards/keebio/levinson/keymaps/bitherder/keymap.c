@@ -1,35 +1,19 @@
 #include QMK_KEYBOARD_H
-
-extern keymap_config_t keymap_config;
+#include "bitherder.h"
 
 enum custom_layers { _QWERTY, _ARENSITO, _ARE_LOWER, _ARE_RAISE, _LOWER, _RAISE, _ADJUST, _MOUSE };
 
-// pseudo key codes
-#define KC_EUR A(S(KC_2))
-#define KC_CESC MT(MOD_LCTL, KC_ESC)
-#define KC_SCESC S(MT(MOD_LCTL, KC_ESC))
-#define KC_SNUHS S(KC_NUHS)
-#define KC_SNUBS S(KC_NUBS)
-#define KC_S_ENT MT(MOD_RSFT, KC_ENT)
-#define KC_D_MO LT(_MOUSE, KC_D)
-#define KC_E_MO LT(_MOUSE, KC_E)
-#define KC_MO MO(_MOUSE)
-#define KC_AREHI MO(_ARE_RAISE)
-#define KC_ARELO MO(_ARE_LOWER)
-#define KC_ADJ MO(_ADJUST)
+// Arensito-specific keycodes
+#define AREHI MO(_ARE_RAISE)
+#define ARELO MO(_ARE_LOWER)
+#define ADJ MO(_ADJUST)
 
 enum custom_keycodes {
-    KC_CMQS = SAFE_RANGE,
-    KC_ATHS,
-    KC_PIAP,
-    KC_DQTD,
-    KC_QTGV,
-    KC_DTEX,
-    KC_QWERTY,
-    KC_ARENSITO,
-    KC_LOWER,
-    KC_RAISE,
-    KC_ADJUST,
+    QWERTY = SAFE_RANGE,
+    ARENSITO,
+    LOWER,
+    RAISE,
+    ADJUST,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -53,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_S_ENT,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        KC_MO, KC_LCTL, KC_LALT, KC_LGUI, KC_LOWER, KC_CESC, KC_SPC, KC_RAISE, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
+        KC_MO, KC_LCTL, KC_LALT, KC_LGUI, LOWER, KC_CESC, KC_SPC, RAISE, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
         // └───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
         ),
 
@@ -71,13 +55,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ARENSITO] = LAYOUT_ortho_4x12(
         // ┌───────┬───────┬───────┬───────┬───────┬───────┐ ┌───────┬───────┬───────┬───────┬───────┬──────────┐
-        KC_TAB, KC_Q, KC_L, KC_CMQS, KC_P, KC_ATHS, KC_PIAP, KC_F, KC_U, KC_D, KC_K, KC_BSPC,
+        KC_TAB, KC_Q, KC_L, KC_COMM, KC_P, KC_AT, KC_PIPE, KC_F, KC_U, KC_D, KC_K, KC_BSPC,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        KC_QTGV, KC_A, KC_R, KC_E_MO, KC_N, KC_B, KC_G, KC_S, KC_I, KC_T, KC_O, KC_DQTD,
+        KC_QUOT, KC_A, KC_R, KC_E_MO, KC_N, KC_B, KC_G, KC_S, KC_I, KC_T, KC_O, KC_DQT,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        KC_LSFT, KC_Z, KC_W, KC_DTEX, KC_H, KC_J, KC_V, KC_C, KC_Y, KC_M, KC_X, KC_S_ENT,
+        KC_LSFT, KC_Z, KC_W, KC_DOT, KC_H, KC_J, KC_V, KC_C, KC_Y, KC_M, KC_X, KC_S_ENT,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        KC_MO, KC_LCTL, KC_LALT, KC_LGUI, KC_ARELO, KC_CESC, KC_SPC, KC_AREHI, KC_RALT, KC_RGUI, KC_RCTL, KC_MO
+        KC_MO, KC_LCTL, KC_LALT, KC_LGUI, ARELO, KC_CESC, KC_SPC, AREHI, KC_RALT, KC_RGUI, KC_RCTL, KC_MO
         // └───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
         ),
 
@@ -101,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         KC_EUR, KC_6, KC_7, KC_8, KC_9, KC_PLUS, KC_ASTR, KC_2, KC_3, KC_4, KC_5, XXXXXXX,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        _______, _______, _______, _______, KC_ADJ, _______, _______, _______, _______, _______, _______, _______
+        _______, _______, _______, _______, ADJ, _______, _______, _______, _______, _______, _______, _______
         // └───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
         ),
 
@@ -124,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, _______, _______,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        _______, _______, _______, _______, _______, _______, _______, KC_ADJ, _______, _______, _______, _______
+        _______, _______, _______, _______, _______, _______, _______, ADJ, _______, _______, _______, _______
         // └───────┴───────┴───────┴───────┴───────┴───────┘ └───────┴───────┴───────┴───────┴───────┴──────────┘
         ),
 
@@ -189,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // ┌───────┬───────┬───────┬───────┬───────┬───────┐ ┌───────┬───────┬───────┬───────┬───────┬──────────┐
         _______, QK_BOOT, DB_TOGG, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
-        _______, _______, MU_NEXT, AU_ON, AU_OFF, AG_NORM, AG_SWAP, KC_QWERTY, KC_ARENSITO, _______, _______, _______,
+        _______, _______, MU_NEXT, AU_ON, AU_OFF, AG_NORM, AG_SWAP, QWERTY, ARENSITO, _______, _______, _______,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
         _______, AU_PREV, AU_NEXT, MU_ON, MU_OFF, MI_ON, MI_OFF, _______, _______, _______, _______, _______,
         // ├───────┼───────┼───────┼───────┼───────┼───────┤ ├───────┼───────┼───────┼───────┼───────┼──────────┤
@@ -222,115 +206,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    static uint16_t saved_keycode;
-    static uint8_t  saved_mods = 0;
+// ============================================================================
+// ARENSITO CUSTOM SHIFT KEYS (from userspace)
+// ============================================================================
+// Custom shift keys for Arensito layout, defined using macro from userspace
+// see https://getreuer.info/posts/keyboards/custom-shift-keys/index.html
+//
+// NOTE: Due to QMK module limitations, the array must be defined here (not just
+// referenced from userspace) because the module's introspection uses ARRAY_SIZE()
+// which requires a direct array definition. However, the actual key mappings come
+// from the ARENSITO_CUSTOM_SHIFT_KEYS macro in users/bitherder/arensito.h, so the
+// data is centralized and shared across keyboards.
+const custom_shift_key_t custom_shift_keys[] = {ARENSITO_CUSTOM_SHIFT_KEYS};
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_CMQS:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_SLSH;
-                } else {
-                    saved_keycode = KC_COMM;
-                }
-                register_code16(saved_keycode);
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_ATHS:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_3;
-                    register_code16(saved_keycode);
-                } else {
-                    add_mods(MOD_LSFT);
-                    saved_keycode = KC_2;
-                    register_code16(saved_keycode);
-                    del_mods(MOD_LSFT);
-                }
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_PIAP:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_7;
-                    register_code16(saved_keycode);
-                } else {
-                    add_mods(MOD_LSFT);
-                    saved_keycode = KC_BSLS;
-                    register_code16(saved_keycode);
-                    del_mods(MOD_LSFT);
-                }
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_QTGV:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_mods = get_mods() & MOD_MASK_SHIFT; // Mask off anything that isn't Shift
-                    del_mods(saved_mods);                     // Remove any Shifts present
-                    saved_keycode = KC_GRV;
-                    register_code16(saved_keycode);
-                    add_mods(saved_mods);
-                } else {
-                    saved_keycode = KC_QUOT;
-                    register_code16(saved_keycode);
-                }
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_DQTD:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_GRV;
-                    register_code16(saved_keycode);
-                } else {
-                    add_mods(MOD_LSFT);
-                    saved_keycode = KC_QUOT;
-                    register_code16(saved_keycode);
-                    del_mods(MOD_LSFT);
-                }
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_DTEX:
-            if (record->event.pressed) {
-                if (get_mods() & MOD_MASK_SHIFT) {
-                    saved_keycode = KC_1;
-                } else {
-                    saved_keycode = KC_DOT;
-                }
-                register_code16(saved_keycode);
-            } else {
-                unregister_code16(saved_keycode);
-            }
-            return false;
-            break;
-        case KC_QWERTY:
+        case QWERTY:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_QWERTY);
             }
             return false;
             break;
-        case KC_ARENSITO:
+        case ARENSITO:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_ARENSITO);
             }
             return false;
             break;
-        case KC_LOWER:
+        case LOWER:
             if (record->event.pressed) {
                 layer_on(_LOWER);
                 update_tri_layer(_LOWER, _RAISE, _ADJUST);
@@ -340,7 +243,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case KC_RAISE:
+        case RAISE:
             if (record->event.pressed) {
                 layer_on(_RAISE);
                 update_tri_layer(_LOWER, _RAISE, _ADJUST);
@@ -350,7 +253,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case KC_ADJUST:
+        case ADJUST:
             if (record->event.pressed) {
                 layer_on(_ADJUST);
             } else {

@@ -27,6 +27,10 @@ git merge qmk/master
 - **Flash**: `qmk flash -kb keebio/iris/rev3 -km bitherder`
 - **Firmware size**: ~98% capacity (28250/28672 bytes) - near maximum
 - **Features**: RGB lighting, Audio, Combos, Leader key, Custom shift keys
+- **Layers**: QWERTY, Arensito, Taipo, Arensito Raise/Lower, Lower, Raise, Adjust (Mouse layer commented out due to capacity)
+- **Taipo**: Stenographic-style layer with ~103 combo definitions mapping multi-key chords to letters, numbers, symbols, and navigation
+- **Leader key**: Function key access (1-9 for F1-F9, 0+digit for F10-F19), audio toggle
+- **Layer switching**: Uses `PDF()` macro for persistent default layer changes
 
 ### Keebio Levinson Rev2 - Travel keyboard
 - **Keymap location**: `keyboards/keebio/levinson/keymaps/bitherder/`
@@ -35,6 +39,9 @@ git merge qmk/master
 - **Flash**: `qmk flash -kb keebio/levinson/rev2 -km bitherder`
 - **Firmware size**: ~80% capacity (23190/28672 bytes)
 - **Features**: Mouse keys, Custom shift keys
+- **Layers**: QWERTY, Arensito, Arensito Raise/Lower, Lower, Raise, Adjust, Mouse
+- **Layer switching**: Uses `set_single_persistent_default_layer()` in `process_record_user` (differs from Iris which uses `PDF()` macro)
+- **Formatting**: Levinson keymap does not yet have clang-format directives or vertically aligned keycodes (see TODO.md)
 - **CRITICAL**: Levinson rules.mk MUST include `BOOTLOADER = atmel-dfu` for flashing to work. Do not remove this setting.
 
 ## Userspace Structure
@@ -43,8 +50,8 @@ Shared code is located in `users/bitherder/`:
 
 - **README.md** - Documentation about this fork (for humans)
 - **arensito.h** - Arensito layout definitions (custom shift keys macro)
-- **bitherder.h** - Main userspace header (includes arensito.h)
-- **rules.mk** - Userspace build configuration
+- **bitherder.h** - Main userspace header (includes arensito.h, defines shared keycodes: mod-taps like KC_CESC/KC_S_ENT, currency KC_EUR, mouse layer access keys)
+- **rules.mk** - Userspace build configuration (adds `EXTRAINCDIRS` for custom_shift_keys module)
 
 ### Arensito Layout
 
@@ -52,8 +59,22 @@ The Arensito alternative keyboard layout is shared across keyboards via userspac
 
 - Custom shift key mappings are defined in the `ARENSITO_CUSTOM_SHIFT_KEYS` macro in `users/bitherder/arensito.h`
 - Each keyboard populates its `custom_shift_keys[]` array using this macro
-- Requires `CUSTOM_SHIFT_KEYS_ENABLE = yes` in keyboard's rules.mk
-- Uses the getreuer/custom_shift_keys community module
+- Requires the `getreuer/custom_shift_keys` community module (enabled via `keymap.json`)
+
+### Custom Shift Keys Module Configuration
+
+The custom_shift_keys module requires configuration in two places per keyboard:
+
+1. **`keymap.json`** (in each keyboard's keymap directory) - Enables the module:
+   ```json
+   { "modules": ["getreuer/custom_shift_keys"] }
+   ```
+2. **`users/bitherder/rules.mk`** (userspace) - Adds the module to the include path so userspace headers can reference it:
+   ```makefile
+   EXTRAINCDIRS += $(TOP_DIR)/modules/getreuer/custom_shift_keys
+   ```
+
+The `EXTRAINCDIRS` line is essential because without it, the `#include "custom_shift_keys.h"` in keyboard keymaps cannot find the module header when it's referenced from userspace code.
 
 ## Commit Message Format
 
@@ -193,4 +214,4 @@ The custom_shift_keys community module has introspection limitations:
 
 - **Iris capacity warning**: The Iris Rev3 firmware is at 98% capacity - be very careful when adding features
 - **Untracked files**: songs.c and songs.h for Iris may be present but uncommitted - handle with care
-- **Module dependencies**: Custom shift keys require `CUSTOM_SHIFT_KEYS_ENABLE = yes` in both userspace and keyboard rules.mk
+- **Module dependencies**: Custom shift keys require the `getreuer/custom_shift_keys` module listed in each keyboard's `keymap.json` and `EXTRAINCDIRS` in userspace `rules.mk`
