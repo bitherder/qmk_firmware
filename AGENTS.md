@@ -44,6 +44,15 @@ git merge qmk/master
 - **Formatting**: Levinson keymap now has clang-format directives, vertically aligned keycodes (8-char padding), and visual split gap matching Iris style
 - **CRITICAL**: Levinson rules.mk MUST include `BOOTLOADER = atmel-dfu` for flashing to work. Do not remove this setting.
 
+### Planck Rev6 - Compact 40% ortholinear
+- **Keymap location**: `keyboards/planck/keymaps/bitherder/`
+- **Compile**: `qmk compile -kb planck/rev6 -km bitherder`
+- **Clean compile**: `qmk compile -c -kb planck/rev6 -km bitherder`
+- **Flash**: `qmk flash -kb planck/rev6 -km bitherder`
+- **Features**: Mouse keys, Custom shift keys, Colemak layout
+- **Layers**: QWERTY, Colemak, Arensito, Arensito Raise/Lower, Lower, Raise, Adjust, Mouse
+- **Formatting**: Migrated to userspace approach with clang-format directives, vertically aligned keycodes (8-char padding), inline row comments
+
 ## Userspace Structure
 
 Shared code is located in `users/bitherder/`:
@@ -98,6 +107,18 @@ For userspace changes, use `bitherder:userspace:` as the prefix.
   - Example: `fix-levinson-mouse-keycodes-2026-02`
 - **Cross-keyboard branches**: `<purpose>-<scope>-YYYY-MM`
   - Example: `extract-arensito-to-userspace-2026-02`
+
+### Working Branch Rule
+
+**Always create a working branch for changes rather than modifying master directly.** This ensures:
+- Changes can be reviewed before merging
+- Easy to revert if issues arise
+- Clean commit history
+
+Create and checkout a new branch before starting implementation:
+```bash
+git checkout -b <branch-name>
+```
 
 ## Build and Test Instructions
 
