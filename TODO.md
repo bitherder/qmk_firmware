@@ -6,36 +6,17 @@
 
 ### Remaining Tasks
 
-- [ ] **Add clang-format directives to Levinson keymap**
-  - Add formatting guide comment before keymaps array
-  - Add `// clang-format off` before keymaps array
-  - Add `// clang-format on` after keymaps array closing `};`
-  - Similar to what was done for Iris keymap in keyboards/keebio/iris/keymaps/bitherder/keymap.c
-
-- [ ] **Vertically align keycodes in Levinson layouts**
-  - Each keycode should be padded to 9 characters total (keycode + comma + space padding)
-  - Example: `KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    ...`
-  - All 12 keycodes per row on a single line
-  - IMPORTANT: Each keycode line MUST end with a comma (even the last keycode)
-  - Align keycodes to match the box-drawing grid in comments above them
-  - The grid uses `┌───────┬` pattern where each box represents one key column
-  - Apply to all 7 layouts: QWERTY, ARENSITO, ARE_RAISE, ARE_LOWER, LOWER, RAISE, ADJUST, MOUSE
-  
-- [ ] **Test Levinson after formatting changes**
-  - Run clean compile: `qmk compile -c -kb keebio/levinson/rev2 -km bitherder`
-  - Verify firmware still builds successfully
-  - Check that alignment is preserved after compile (clang-format directives working)
-
 - [ ] **Flash and smoke test Levinson**
   - Flash updated firmware to Levinson keyboard
   - Test Arensito layout functionality
   - Verify custom shift keys work correctly (e.g., , → ? when shifted)
   - Test layer switching between QWERTY and Arensito
 
-- [ ] **Merge branch to master**
-  - Once all formatting is complete and tested
+- [ ] **Merge branch to master and update AGENTS.md**
+  - Once testing is complete
   - Merge extract-arensito-to-userspace-2026-02 into master
   - Update AGENTS.md if needed with any new learnings
+  - Note: master was previously merged at an earlier point; re-merge needed to pick up Levinson formatting commits
 
 ### Completed Tasks
 
@@ -48,6 +29,12 @@
 - [x] Clean up commented code in arensito.h
 - [x] Add EXTRAINCDIRS to userspace rules.mk
 - [x] Verify both keyboards compile with clean builds
+- [x] Remove redundant ASCII art layout comments from Levinson keymap
+- [x] Add clang-format directives to Levinson keymap
+- [x] Vertically align keycodes in all 8 Levinson layouts (8-char padding, matching Iris style)
+- [x] Add visual split gap between left/right halves in Levinson box-drawing grid
+- [x] Remove duplicate layout formatting guide comment from Iris keymap
+- [x] Clean compile Levinson after all formatting changes (24544/28672 bytes, 85%)
 
 ## Future Improvements
 
