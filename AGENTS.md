@@ -41,7 +41,7 @@ git merge qmk/master
 - **Features**: Mouse keys, Custom shift keys
 - **Layers**: QWERTY, Arensito, Arensito Raise/Lower, Lower, Raise, Adjust, Mouse
 - **Layer switching**: Uses `set_single_persistent_default_layer()` in `process_record_user` (differs from Iris which uses `PDF()` macro)
-- **Formatting**: Levinson keymap does not yet have clang-format directives or vertically aligned keycodes (see TODO.md)
+- **Formatting**: Levinson keymap now has clang-format directives, vertically aligned keycodes (8-char padding), and visual split gap matching Iris style
 - **CRITICAL**: Levinson rules.mk MUST include `BOOTLOADER = atmel-dfu` for flashing to work. Do not remove this setting.
 
 ## Userspace Structure
